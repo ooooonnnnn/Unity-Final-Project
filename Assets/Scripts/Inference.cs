@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using UnityEngine;
 using Unity.InferenceEngine;
-using Unity.InferenceEngine.Tokenization; 
+using UnityEngine.Rendering;
 
 public class Inference : MonoBehaviour
 {
@@ -16,12 +16,18 @@ public class Inference : MonoBehaviour
     
     [SerializeField,HideInInspector] private BartTokenizer tokenizer;
 
-    [SerializeField] private string sentence;
-    [SerializeField] string[] labels = {"an ice spell", "a fire spell", "a dark element spell", "a light element spell"};
+    [SerializeField] private string inputSentence;
+    [SerializeField, 
+     Tooltip("The premise is created by inserting the input sentence into this pattern")] private string premisePattern;
+    [SerializeField] private ElementLabel[] elementLabels;
+    [SerializeField, HideInInspector] private string[] labels;
+    [SerializeField, 
+     Tooltip("The hypothesis is created by inserting each label into this pattern")] private string hypothesisPattern;
 
     private void OnValidate()
     {
         tokenizer = GetComponent<BartTokenizer>();
+        labels = elementLabels.Select(label => label.label).ToArray();
     }
 
     [ContextMenu(nameof(BuildModel))]
@@ -62,7 +68,7 @@ public class Inference : MonoBehaviour
     private void MakeInputAndMask()
     {
         string[] input = labels.Select(label =>
-                $"The mage said \"{sentence}\".</s></s>The result was {label}.")
+                $"The mage said \"{inputSentence}\".</s></s>The result was {label}.")
             .ToArray();
         
         List<int>[] tokenized = input.Select(text => tokenizer.Tokenize(text).ToList()).ToArray();
@@ -108,7 +114,7 @@ public class Inference : MonoBehaviour
         var sw = new Stopwatch();
         sw.Start();
         
-        this.sentence = sentence;
+        this.inputSentence = sentence;
         InferInput();
         
         sw.Stop();

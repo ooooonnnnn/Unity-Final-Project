@@ -2949,7 +2949,7 @@ GameObject:
   - component: {fileID: 1291820085}
   - component: {fileID: 1291820087}
   m_Layer: 0
-  m_Name: Sentis test
+  m_Name: Text Classifier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2969,8 +2969,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   modelAsset: {fileID: 5022602860645237092, guid: ebc9cf891b0acef4c82cbe39356c7582, type: 3}
   tokenizer: {fileID: 1291820087}
-  sentence: Ice shield
-  label: an ice spell
+  sentence: Orb of luminence
+  elementLabels: []
+  labels: []
 --- !u!4 &1291820086
 Transform:
   m_ObjectHideFlags: 0
