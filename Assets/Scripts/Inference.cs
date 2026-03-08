@@ -28,6 +28,8 @@ public class Inference : MonoBehaviour
     [ContextMenu(nameof(InferInput))]
     private void InferInput()
     {
+        ValidateRuntimeModel();
+        
         string premiseAndHypothesis = $"The mage said \"{sentence}\".</s></s>The result was {label}.";
         IReadOnlyList<int> tokenized = tokenizer.Tokenize(premiseAndHypothesis);
         
@@ -43,6 +45,8 @@ public class Inference : MonoBehaviour
         var output = (worker.PeekOutput() as Tensor<float>).DownloadToArray();
         if (output != null)
         {
+            print(premiseAndHypothesis);
+            
             print("Raw scores (contradiction, neutral, entailment\n" + 
                   string.Join(" ", output.Select(num => num.ToString("F2"))));
             
@@ -61,5 +65,19 @@ public class Inference : MonoBehaviour
         worker.Dispose();
         inputIdsTensor.Dispose();
         attentionMaskTensor.Dispose();
+    }
+
+    private void ValidateRuntimeModel()
+    {
+        if (runtimeModel == null)
+        {
+            BuildModel();
+        }
+    }
+
+    public void Infer(string sentence)
+    {
+        this.sentence = sentence;
+        InferInput();
     }
 }

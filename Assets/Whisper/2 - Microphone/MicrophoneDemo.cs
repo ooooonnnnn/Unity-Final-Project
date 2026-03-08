@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using Whisper.Utils;
 using Button = UnityEngine.UI.Button;
@@ -26,6 +27,9 @@ namespace Whisper.Samples
         public Toggle translateToggle;
         public Toggle vadToggle;
         public ScrollRect scroll;
+        
+        [Header("Events")]
+        [SerializeField] private UnityEvent<string> onTranscription;
         
         private string _buffer;
 
@@ -89,6 +93,8 @@ namespace Whisper.Samples
             
             outputText.text = text;
             UiUtils.ScrollDown(scroll);
+            
+            onTranscription.Invoke(text);
         }
         
         private void OnLanguageChanged(int ind)
