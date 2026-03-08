@@ -16,7 +16,8 @@ public class Inference : MonoBehaviour
     
     [SerializeField,HideInInspector] private BartTokenizer tokenizer;
 
-    [SerializeField] private string sentence, label;
+    [SerializeField] private string sentence;
+    [SerializeField] string[] labels = {"an ice spell", "a fire spell", "a dark element spell", "a light element spell"};
 
     private void OnValidate()
     {
@@ -34,16 +35,11 @@ public class Inference : MonoBehaviour
     private void InferInput()
     {
         ValidateRuntimeModel();
-        
-        string premiseAndHypothesis = $"The mage said \"{sentence}\".</s></s>The result was {label}.";
-        IReadOnlyList<int> tokenized = tokenizer.Tokenize(premiseAndHypothesis);
-        
+
         inputIdsTensor?.Dispose();
         attentionMaskTensor?.Dispose();
         
-        inputIdsTensor = new Tensor<int>(new TensorShape(1, tokenized.Count), tokenized.ToArray());
-        int[] mask = tokenized.Select(i => 1).ToArray();
-        attentionMaskTensor = new Tensor<int>(new TensorShape(1, tokenized.Count), mask);
+        MakeInputAndMask();
 
         worker ??= new Worker(runtimeModel, BackendType.GPUCompute);
         worker.SetInput("input_ids", inputIdsTensor);
@@ -53,22 +49,50 @@ public class Inference : MonoBehaviour
         var output = (worker.PeekOutput() as Tensor<float>)?.DownloadToArray();
         if (output != null)
         {
-            print(premiseAndHypothesis);
-            
-            // print("Raw scores (contradiction, neutral, entailment\n" + 
-            //       string.Join(" ", output.Select(num => num.ToString("F2"))));
-            //
-            // print("After softmax:\n" + 
-            //       string.Join(" ", MathHelper.Softmax(output).Select(num => num.ToString("F2"))));
-            //
-            var noNeutral = output.Where((num, i) => i != 1).ToArray();
-            
-            // print($"Contradiction and entailment scores:\n{noNeutral[0]} {noNeutral[1]}");
-            
-            print($"Contradiction and entailment probabilities:\n" +
-                  string.Join(" ", MathHelper.Softmax(noNeutral).Select(num => num.ToString("F2"))));
-            
+            for (int i = 0; i < output.Length / 3; i++)
+            {
+                float[] falseTrueLogits = { output[i * 3], output[i * 3 + 2] };
+                float[] probabilities = MathHelper.Softmax(falseTrueLogits);
+                print(labels[i] + "\n" +
+                      string.Join(" ", probabilities.Select(num => num.ToString("F2"))));
+            }
         }
+    }
+
+    private void MakeInputAndMask()
+    {
+        string[] input = labels.Select(label =>
+                $"The mage said \"{sentence}\".</s></s>The result was {label}.")
+            .ToArray();
+        
+        List<int>[] tokenized = input.Select(text => tokenizer.Tokenize(text).ToList()).ToArray();
+        
+        int maxLength = tokenized.Max(list => list.Count);
+
+        //pad others and create masks
+        int[,] masks = new int[tokenized.Length, maxLength];
+        for (int i = 0; i < tokenized.Length; i++)
+        {
+            int seqLength = tokenized[i].Count;
+            for (int j = 0; j < maxLength; j++)
+            {
+                if (j >= seqLength)
+                {
+                    tokenized[i].Add(1);
+                    masks[i, j] = 0;
+                }
+                else
+                {
+                    masks[i, j] = 1;
+                }
+            }
+        }
+        
+        int[] flattenedTokens = tokenized.SelectMany(list => list).ToArray();
+        int[] flattenedMasks = masks.Cast<int>().ToArray();
+        
+        inputIdsTensor = new Tensor<int>(new TensorShape(tokenized.Length, maxLength), flattenedTokens);
+        attentionMaskTensor = new Tensor<int>(new TensorShape(tokenized.Length, maxLength), flattenedMasks);
     }
 
     private void ValidateRuntimeModel()
