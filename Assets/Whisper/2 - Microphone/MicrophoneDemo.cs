@@ -16,7 +16,7 @@ namespace Whisper.Samples
         public WhisperManager whisper;
         public MicrophoneRecord microphoneRecord;
         public bool streamSegments = true;
-        public bool printLanguage = true;
+        // public bool printLanguage = true;
 
         [Header("UI")] 
         public Button button;
@@ -43,7 +43,7 @@ namespace Whisper.Samples
             button.onClick.AddListener(OnButtonPressed);
             languageDropdown.value = languageDropdown.options
                 .FindIndex(op => op.text == whisper.language);
-            languageDropdown.onValueChanged.AddListener(OnLanguageChanged);
+            // languageDropdown.onValueChanged.AddListener(OnLanguageChanged);
 
             translateToggle.isOn = whisper.translateToEnglish;
             translateToggle.onValueChanged.AddListener(OnTranslateChanged);
@@ -88,8 +88,8 @@ namespace Whisper.Samples
             timeText.text = $"Time: {time} ms\nRate: {rate:F1}x";
 
             var text = res.Result;
-            if (printLanguage)
-                text += $"\n\nLanguage: {res.Language}";
+            // if (printLanguage)
+            //     text += $"\n\nLanguage: {res.Language}";
             
             outputText.text = text;
             UiUtils.ScrollDown(scroll);
