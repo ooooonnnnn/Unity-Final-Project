@@ -16,18 +16,17 @@ public class Inference : MonoBehaviour
     
     [SerializeField,HideInInspector] private BartTokenizer tokenizer;
 
+    [Header("")]
     [SerializeField] private string inputSentence;
     [SerializeField, 
      Tooltip("The premise is created by inserting the input sentence into this pattern")] private string premisePattern;
-    [SerializeField] private ElementLabel[] elementLabels;
-    [SerializeField, HideInInspector] private string[] labels;
+    [SerializeField] private string[] labels;
     [SerializeField, 
      Tooltip("The hypothesis is created by inserting each label into this pattern")] private string hypothesisPattern;
 
     private void OnValidate()
     {
         tokenizer = GetComponent<BartTokenizer>();
-        labels = elementLabels.Select(label => label.label).ToArray();
     }
 
     [ContextMenu(nameof(BuildModel))]

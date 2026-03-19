@@ -2969,9 +2969,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   modelAsset: {fileID: 5022602860645237092, guid: ebc9cf891b0acef4c82cbe39356c7582, type: 3}
   tokenizer: {fileID: 1291820087}
-  sentence: Orb of luminence
-  elementLabels: []
-  labels: []
+  inputSentence: underworld spheroid
+  premisePattern: The mage said "{0}".
+  labels:
+  - a fire spell
+  - an ice spell
+  - a spell that created bright light
+  - a spell that caused darkness
+  - 'a projectile that flew from his wand '
+  - an enchantment that affected a large area
+  - 'a targeted attack that hit a single enemy '
+  - 'an armor that covered him '
+  hypothesisPattern: The result was {0}.
 --- !u!4 &1291820086
 Transform:
   m_ObjectHideFlags: 0
