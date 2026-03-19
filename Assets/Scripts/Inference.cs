@@ -60,7 +60,7 @@ public class Inference : MonoBehaviour
                 float[] falseTrueLogits = { output[i * 3], output[i * 3 + 2] };
                 float[] probabilities = MathHelper.Softmax(falseTrueLogits);
                 print(labels[i] + "\n" +
-                      string.Join(" ", probabilities.Select(num => num.ToString("F2"))));
+                      string.Join(" ", probabilities[1].ToString("F2")));
             }
         }
     }
