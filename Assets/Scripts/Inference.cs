@@ -37,7 +37,7 @@ public class Inference : MonoBehaviour
     }
 
     [ContextMenu(nameof(InferInput))]
-    private void InferInput()
+    private Tensor<float> InferInput()
     {
         ValidateRuntimeModel();
 
@@ -49,19 +49,10 @@ public class Inference : MonoBehaviour
         worker ??= new Worker(runtimeModel, BackendType.GPUCompute);
         worker.SetInput("input_ids", inputIdsTensor);
         worker.SetInput("attention_mask", attentionMaskTensor);
-
+        
         worker.Schedule();
-        var output = (worker.PeekOutput() as Tensor<float>)?.DownloadToArray();
-        if (output != null)
-        {
-            for (int i = 0; i < output.Length / 3; i++)
-            {
-                float[] falseTrueLogits = { output[i * 3], output[i * 3 + 2] };
-                float[] probabilities = MathHelper.Softmax(falseTrueLogits);
-                print(labels[i] + "\n" +
-                      string.Join(" ", probabilities[1].ToString("F2")));
-            }
-        }
+
+        return worker.PeekOutput() as Tensor<float>;
     }
 
     private void MakeInputAndMask()
@@ -108,13 +99,13 @@ public class Inference : MonoBehaviour
         }
     }
 
-    public void Infer(string sentence)
+    public Tensor<float> Infer(string sentence)
     {
         var sw = new Stopwatch();
         sw.Start();
         
         this.inputSentence = sentence;
-        InferInput();
+        return InferInput();
         
         sw.Stop();
         print($"Inference time: {sw.ElapsedMilliseconds} ms.");

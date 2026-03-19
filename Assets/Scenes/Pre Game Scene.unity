@@ -383,6 +383,17 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &703420748 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2603508415342831387, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+  m_PrefabInstance: {fileID: 7663471104037713184}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 103bf412858d54148b5f5befac72bcd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,41 +451,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 117723573293343047, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: m_Name
-      value: Transcriptor
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 901815871777711716, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: button
-      value: 
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 901815871777711716, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: scroll
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 703420748}
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 901815871777711716, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: timeText
-      value: 
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RecordVoiceWithInputAction
       objectReference: {fileID: 0}
-    - target: {fileID: 901815871777711716, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: vadToggle
-      value: 
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VoiceInputPipeline, Assembly-CSharp
       objectReference: {fileID: 0}
-    - target: {fileID: 901815871777711716, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: buttonText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 901815871777711716, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: outputText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 901815871777711716, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: translateToggle
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 901815871777711716, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: languageDropdown
-      value: 
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1777772359667455690, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -516,25 +519,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3831154209054863583, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: vadIndicatorImage
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3831154209054863583, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: microphoneDropdown
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5915005458564362342, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_Name
       value: Persistent Managers
       objectReference: {fileID: 0}
-    - target: {fileID: 6494211483977058453, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: m_Name
-      value: Transcriptor
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 6494211483977058453, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
