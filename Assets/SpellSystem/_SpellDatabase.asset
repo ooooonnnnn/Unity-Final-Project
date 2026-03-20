@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a983628bd44f54ab5617d22543ea16, type: 3}
+  m_Name: _SpellDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::SpellDatabase
+  elements:
+  - {fileID: 11400000, guid: 815cbf6f41857864cb24e71b47bc1457, type: 2}
+  spellTypes:
+  - {fileID: 11400000, guid: ac3842ca7a979594095a15f44b6141b8, type: 2}
+  combos:
+  - element: {fileID: 11400000, guid: 815cbf6f41857864cb24e71b47bc1457, type: 2}
+    spellType: {fileID: 11400000, guid: ac3842ca7a979594095a15f44b6141b8, type: 2}
+    combo: {fileID: 11400000, guid: ad8d9264639efa8439732a84fdbc5a99, type: 2}
