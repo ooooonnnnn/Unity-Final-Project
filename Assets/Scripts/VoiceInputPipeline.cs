@@ -15,7 +15,7 @@ public class VoiceInputPipeline : MonoBehaviour
     [SerializeField, HideInInspector] Inference inference;
 
     [Tooltip("Called whenever the pipeline is done with the label scores and sentence")] 
-    public UnityEvent<float[], string> OnPipelineDone;
+    public UnityEvent<ElementType, SpellShape, string> OnPipelineDone;
     
     private AudioChunk lastRecordedChunk;
     private string lastTranscribedSentence;
@@ -84,8 +84,12 @@ public class VoiceInputPipeline : MonoBehaviour
                     scores[i] = MathHelper.Softmax(falseTrueLogits)[1];
                 }
             }
-            OnPipelineDone.Invoke(scores, lastTranscribedSentence);
             
+            //Get Best element and type
+            Managers.Instance.MagicManager.GetBestFitElementAndType(scores, out ElementType element, out SpellShape spellShape);
+            OnPipelineDone.Invoke(element, spellShape, lastTranscribedSentence);
+            
+            print($"Element: {element}, SpellShape: {spellShape}");
             print(string.Join("\n", scores.Select(s => s.ToString("F2"))));
             
             yield return null;

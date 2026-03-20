@@ -6,6 +6,8 @@ public class Managers : MonoBehaviour
     public static Managers Instance;
     [SerializeField, HideInInspector] private MagicManager magicManager;
     [SerializeField, HideInInspector] private VoiceInputPipeline voiceInputPipeline;
+    
+    public MagicManager MagicManager => magicManager;
 
     private void OnValidate()
     {
