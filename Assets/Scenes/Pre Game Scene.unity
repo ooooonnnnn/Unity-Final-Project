@@ -484,32 +484,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Persistent Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 8320053824274423545, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: inputSentence
+      value: underworld spheroid
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320053824274423545, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: 'labels.Array.data[0]'
+      value: a fire spe
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4532827598946578288, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7663471104037713186}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
---- !u!1 &7663471104037713185 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4532827598946578288, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-  m_PrefabInstance: {fileID: 7663471104037713184}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7663471104037713186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7663471104037713185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f2e2dcf8d720904c884c4a10c6ca941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  spellDatabase: {fileID: 11400000, guid: ac108d06b77bfc94985fb020ea5b080a, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

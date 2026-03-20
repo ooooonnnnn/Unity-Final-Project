@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e2934c8b181b9d4cb3f821fe336b750, type: 3}
-  m_Name: Projectile
+  m_Name: Shield
   m_EditorClassIdentifier: Assembly-CSharp::SpellTypeDefinition
-  SpellShape: 0
+  SpellShape: 3
   description: 
   baseCooldown: 1
   manaCost: 10
-  inferenceLabel: 'a projectile that flew from his wand '
+  inferenceLabel: 'an armor that covered him '

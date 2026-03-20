@@ -1,15 +1,7 @@
 using UnityEngine;
 
-public enum SpellDeliveryCategory
-{
-    Projectile,
-    Shield,
-    Heal,
-    Area
-}
-
 [CreateAssetMenu(fileName = "NewSpellType", menuName = "Spells/Spell Type Definition")]
-public class SpellTypeDefinition : ScriptableObject
+public class SpellTypeDefinition : ScriptableObject, IInferenceLabel
 {
     [Header("Behavior")] 
     public SpellShape SpellShape;
@@ -21,4 +13,6 @@ public class SpellTypeDefinition : ScriptableObject
     
     [Header("Inference")]
     [TextArea] public string inferenceLabel;
+
+    public string GetLabel() => inferenceLabel;
 }

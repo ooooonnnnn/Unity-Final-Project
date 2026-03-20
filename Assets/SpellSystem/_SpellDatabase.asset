@@ -14,8 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpellDatabase
   elements:
   - {fileID: 11400000, guid: 815cbf6f41857864cb24e71b47bc1457, type: 2}
+  - {fileID: 11400000, guid: ebac76c01476dc041aa2c0e78964dcad, type: 2}
+  - {fileID: 11400000, guid: f5f16b54052bb3f4696c4888a4496f3c, type: 2}
+  - {fileID: 11400000, guid: deca6d7687f9fc9409f699662fc456ec, type: 2}
   spellTypes:
   - {fileID: 11400000, guid: ac3842ca7a979594095a15f44b6141b8, type: 2}
+  - {fileID: 11400000, guid: b872474e771a81b4b89a4479f9c652f2, type: 2}
+  - {fileID: 11400000, guid: b3d549dcc2efc8948be4531ef700724c, type: 2}
+  - {fileID: 11400000, guid: 5d9a6c445b506b242ac9b455942d8584, type: 2}
   combos:
   - element: {fileID: 11400000, guid: 815cbf6f41857864cb24e71b47bc1457, type: 2}
     spellType: {fileID: 11400000, guid: ac3842ca7a979594095a15f44b6141b8, type: 2}

@@ -20,7 +20,7 @@ public class Inference : MonoBehaviour
     [SerializeField] private string inputSentence;
     [SerializeField, 
      Tooltip("The premise is created by inserting the input sentence into this pattern")] private string premisePattern;
-    [SerializeField] private string[] labels;
+    public string[] labels;
     [SerializeField, 
      Tooltip("The hypothesis is created by inserting each label into this pattern")] private string hypothesisPattern;
 
@@ -106,9 +106,6 @@ public class Inference : MonoBehaviour
         
         this.inputSentence = sentence;
         return InferInput();
-        
-        sw.Stop();
-        print($"Inference time: {sw.ElapsedMilliseconds} ms.");
     }
 
     private void OnDestroy()

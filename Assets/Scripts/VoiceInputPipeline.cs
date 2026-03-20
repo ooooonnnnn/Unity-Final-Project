@@ -40,6 +40,11 @@ public class VoiceInputPipeline : MonoBehaviour
         inferenceResult.Dispose();
     }
 
+    public void SetInferenceLabels(string[] labels)
+    {
+        inference.labels = labels;
+    }
+
     private void SaveAudioChunk(AudioChunk chunk)
     {
         lastRecordedChunk = chunk;

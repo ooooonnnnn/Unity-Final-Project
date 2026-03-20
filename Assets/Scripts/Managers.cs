@@ -5,6 +5,15 @@ public class Managers : MonoBehaviour
 {
     public static Managers Instance;
     [SerializeField, HideInInspector] private MagicManager magicManager;
+    [SerializeField, HideInInspector] private VoiceInputPipeline voiceInputPipeline;
+
+    private void OnValidate()
+    {
+        magicManager = GetComponentInChildren<MagicManager>();
+        voiceInputPipeline = GetComponentInChildren<VoiceInputPipeline>();
+        
+        voiceInputPipeline.SetInferenceLabels(magicManager.GetInferenceLabels());
+    }
 
     private void Awake()
     {

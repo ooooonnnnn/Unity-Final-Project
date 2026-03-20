@@ -258,6 +258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1222633909818226369}
+  - component: {fileID: 6073504111963615071}
   m_Layer: 0
   m_Name: Magic Manager
   m_TagString: Untagged
@@ -280,6 +281,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1777772359667455690}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6073504111963615071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4532827598946578288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2e2dcf8d720904c884c4a10c6ca941, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  spellDatabase: {fileID: 11400000, guid: ac108d06b77bfc94985fb020ea5b080a, type: 2}
 --- !u!1 &4860299732965293653
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,6 +394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1107f73c028029a44bd1441cfa0b6ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  magicManager: {fileID: 6073504111963615071}
+  voiceInputPipeline: {fileID: 2603508415342831387}
 --- !u!1 &7651796052146048082
 GameObject:
   m_ObjectHideFlags: 0
