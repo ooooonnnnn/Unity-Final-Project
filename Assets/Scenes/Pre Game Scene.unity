@@ -383,17 +383,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!114 &703420748 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2603508415342831387, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-  m_PrefabInstance: {fileID: 7663471104037713184}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 103bf412858d54148b5f5befac72bcd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,38 +440,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 117723573293343047, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: m_Name
-      value: Transcriber
-      objectReference: {fileID: 0}
-    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 703420748}
-    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RecordVoiceWithInputAction
-      objectReference: {fileID: 0}
-    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: VoiceInputPipeline, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1777772359667455690, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -530,8 +487,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4532827598946578288, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7663471104037713186}
   m_SourcePrefab: {fileID: 100100000, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+--- !u!1 &7663471104037713185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4532827598946578288, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+  m_PrefabInstance: {fileID: 7663471104037713184}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7663471104037713186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7663471104037713185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2e2dcf8d720904c884c4a10c6ca941, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  spellDatabase: {fileID: 11400000, guid: ac108d06b77bfc94985fb020ea5b080a, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

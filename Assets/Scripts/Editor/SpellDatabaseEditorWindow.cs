@@ -736,7 +736,7 @@ public class SpellDatabaseEditorWindow : EditorWindow
     {
         VisualElement row = CreateListRow(isSelected);
 
-        Label prefix = new Label(spellType != null ? spellType.deliveryCategory.ToString().Substring(0, 1) : "!");
+        Label prefix = new Label(spellType != null ? spellType.SpellShape.ToString().Substring(0, 1) : "!");
         prefix.style.width = 14f;
         prefix.style.unityTextAlign = TextAnchor.MiddleCenter;
         prefix.style.marginRight = 6f;

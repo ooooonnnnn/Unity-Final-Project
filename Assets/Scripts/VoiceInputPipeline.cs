@@ -20,6 +20,7 @@ public class VoiceInputPipeline : MonoBehaviour
     private AudioChunk lastRecordedChunk;
     private string lastTranscribedSentence;
     private bool isRecording;
+    private Tensor<float> inferenceResult;
     
     private void OnValidate()
     {
@@ -31,6 +32,12 @@ public class VoiceInputPipeline : MonoBehaviour
     private void Awake()
     {
         microphoneRecord.OnRecordStop += SaveAudioChunk; 
+    }
+
+    private void OnDestroy()
+    {
+        microphoneRecord.OnRecordStop -= SaveAudioChunk; 
+        inferenceResult.Dispose();
     }
 
     private void SaveAudioChunk(AudioChunk chunk)
@@ -62,12 +69,13 @@ public class VoiceInputPipeline : MonoBehaviour
             while (!analysisTask.IsCompleted) yield return null;
             
             //get scores
-            var logits = analysisTask.Result;
-            float[] scores = new float[logits.shape[0]];
+            inferenceResult?.Dispose();
+            inferenceResult = analysisTask.Result;
+            float[] scores = new float[inferenceResult.shape[0]];
             {
-                for (int i = 0; i < logits.shape[0]; i++)
+                for (int i = 0; i < inferenceResult.shape[0]; i++)
                 {
-                    float[] falseTrueLogits = { logits[i,0], logits[i,2] };
+                    float[] falseTrueLogits = { inferenceResult[i,0], inferenceResult[i,2] };
                     scores[i] = MathHelper.Softmax(falseTrueLogits)[1];
                 }
             }
