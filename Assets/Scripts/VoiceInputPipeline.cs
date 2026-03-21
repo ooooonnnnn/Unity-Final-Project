@@ -21,6 +21,8 @@ public class VoiceInputPipeline : MonoBehaviour
     private string lastTranscribedSentence;
     private bool isRecording;
     private Tensor<float> inferenceResult;
+    private Task<Tensor<float>> analysisTask;
+    private Coroutine pipelineCoroutine;
     
     private void OnValidate()
     {
@@ -50,9 +52,16 @@ public class VoiceInputPipeline : MonoBehaviour
         lastRecordedChunk = chunk;
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
-        var pipeline = StartCoroutine(Pipeline());
+        yield return WarmUpModels();
+        pipelineCoroutine = StartCoroutine(Pipeline());
+    }
+
+    private IEnumerator WarmUpModels()
+    {
+        lastRecordedChunk = new AudioChunk();
+        yield return TranscribeAndInferCor(lastRecordedChunk);
     }
 
     private IEnumerator Pipeline()
@@ -69,9 +78,7 @@ public class VoiceInputPipeline : MonoBehaviour
             print(lastRecordedChunk.Length);
             
             //Transcribe with whisper than infer with sentis
-            var analysisTask = TranscribeAndInfer(lastRecordedChunk);
-            //Wait for the task
-            while (!analysisTask.IsCompleted) yield return null;
+            yield return TranscribeAndInferCor(lastRecordedChunk);
             
             //get scores
             inferenceResult?.Dispose();
@@ -96,7 +103,15 @@ public class VoiceInputPipeline : MonoBehaviour
         }
     }
 
-    private async Task<Tensor<float>> TranscribeAndInfer(AudioChunk recordedChunk)
+    private IEnumerator TranscribeAndInferCor(AudioChunk recordedChunk)
+    {
+        //Transcribe with whisper than infer with sentis
+        analysisTask = TranscribeAndInferAsync(lastRecordedChunk);
+        //Wait for the task
+        while (!analysisTask.IsCompleted) yield return null;
+    }
+
+    private async Task<Tensor<float>> TranscribeAndInferAsync(AudioChunk recordedChunk)
     {
         lastTranscribedSentence = await transcription.Transcribe(recordedChunk);
         var tensor = inference.Infer(lastTranscribedSentence);
