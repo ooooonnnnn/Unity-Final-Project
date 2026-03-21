@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneChangerTest : MonoBehaviour
 {
-    [SerializeField] private Scene nextScene;
+    [SerializeField] private SceneAsset nextScene;
 
     public void ChangeScene() => SceneManager.LoadScene(nextScene.name);
 }
