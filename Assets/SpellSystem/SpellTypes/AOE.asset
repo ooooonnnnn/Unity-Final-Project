@@ -16,4 +16,4 @@ MonoBehaviour:
   description: 
   baseCooldown: 1
   manaCost: 10
-  inferenceLabel: an enchantment that affected a large area
+  inferenceLabel: that many enemies where damaged

@@ -16,4 +16,4 @@ MonoBehaviour:
   description: 
   baseCooldown: 1
   manaCost: 10
-  inferenceLabel: 'an armor that covered him '
+  inferenceLabel: 'a shield that protected him '

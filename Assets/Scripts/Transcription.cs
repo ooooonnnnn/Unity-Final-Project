@@ -16,6 +16,7 @@ public class Transcription : MonoBehaviour
     public async Task<string> Transcribe(AudioChunk audioChunk)
     {
         var res = await whisper.GetTextAsync(audioChunk.Data, audioChunk.Frequency, audioChunk.Channels);
-        return res.Result;
+        var rawText = res.Result;
+        return rawText.Normalize();
     }
 }

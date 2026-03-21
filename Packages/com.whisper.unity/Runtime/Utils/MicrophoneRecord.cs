@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 // ReSharper disable RedundantCast
@@ -66,9 +67,9 @@ namespace Whisper.Utils
 
         [Header("Microphone selection (optional)")] 
         [Tooltip("Optional UI dropdown with all available microphone inputs")]
-        [CanBeNull] public Dropdown microphoneDropdown;
-        [Tooltip("The label of default microphone input in dropdown")]
-        public string microphoneDefaultLabel = "Default microphone";
+        [CanBeNull] public TMP_Dropdown microphoneDropdown;
+        // [Tooltip("The label of default microphone input in dropdown")]
+        // public string microphoneDefaultLabel = "Default microphone";
 
         /// <summary>
         /// Raised when VAD status changed.
@@ -113,20 +114,6 @@ namespace Whisper.Utils
         public bool IsVoiceDetected { get; private set; }
 
         public IEnumerable<string> AvailableMicDevices => Microphone.devices;
-
-        private void Awake()
-        {
-            if(microphoneDropdown != null)
-            {
-                microphoneDropdown.options = AvailableMicDevices
-                    .Prepend(microphoneDefaultLabel)
-                    .Select(text => new Dropdown.OptionData(text))
-                    .ToList();
-                microphoneDropdown.value = microphoneDropdown.options
-                    .FindIndex(op => op.text == microphoneDefaultLabel);
-                microphoneDropdown.onValueChanged.AddListener(OnMicrophoneChanged);
-            }
-        }
 
         private void Update()
         {
@@ -247,7 +234,7 @@ namespace Whisper.Utils
         {
             if (microphoneDropdown == null) return;
             var opt = microphoneDropdown.options[ind];
-            SelectedMicDevice = opt.text == microphoneDefaultLabel ? null : opt.text;
+            SelectedMicDevice = opt.text;
         }
 
         /// <summary>

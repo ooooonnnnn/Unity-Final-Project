@@ -13,8 +13,12 @@ public class VoiceInputPipeline : MonoBehaviour
     [SerializeField, HideInInspector] Transcription transcription;
     [SerializeField, HideInInspector] Inference inference;
 
+    [Header("Settings")] [SerializeField] private bool keepMicrophoneOn;
+    
     [Tooltip("Called whenever the pipeline is done with the label scores and sentence")] 
     public UnityEvent<ElementType?, SpellShape?, string> OnPipelineDone;
+    [Tooltip("Called whenever transcription is done")]
+    public UnityEvent<string> OnTranscriptionDone;
     
     private const string InferenceWarmupSentence = "my name is inigo montoya, you killed my father, prepare to die";
     private AudioChunk lastRecordedChunk;
@@ -56,6 +60,7 @@ public class VoiceInputPipeline : MonoBehaviour
     {
         yield return WarmUpInference();
         pipelineCoroutine = StartCoroutine(Pipeline());
+        if (keepMicrophoneOn) microphoneRecord.StartRecord();
     }
 
     private IEnumerator WarmUpInference()
@@ -114,6 +119,8 @@ public class VoiceInputPipeline : MonoBehaviour
     private async Task<Tensor<float>> TranscribeAndInferAsync(AudioChunk recordedChunk)
     {
         lastTranscribedSentence = await transcription.Transcribe(recordedChunk);
+        OnTranscriptionDone.Invoke(lastTranscribedSentence);
+        print("Called event with text: " + lastTranscribedSentence);
         return await InferAsync();
     }
 
@@ -131,13 +138,20 @@ public class VoiceInputPipeline : MonoBehaviour
 
     public void RecordVoiceWithInputAction(InputAction.CallbackContext ctx)
     {
-        if (ctx.started) StartRecording();
-        
-        if (ctx.canceled) StopRecording();
+        if (ctx.started)
+        {
+            StartRecording();
+        }
+
+        if (ctx.canceled)
+        {
+            StopRecording();
+        }
     }
 
     private void StartRecording()
     {
+        if (keepMicrophoneOn) microphoneRecord.StopRecord();
         microphoneRecord.StartRecord();
         isRecording = true;
     }
@@ -146,5 +160,6 @@ public class VoiceInputPipeline : MonoBehaviour
     {
         microphoneRecord.StopRecord();
         isRecording = false;
+        if (keepMicrophoneOn) microphoneRecord.StartRecord();
     }
 }
