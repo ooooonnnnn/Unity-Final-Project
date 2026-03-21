@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +16,7 @@ public class VoiceInputPipeline : MonoBehaviour
     [Tooltip("Called whenever the pipeline is done with the label scores and sentence")] 
     public UnityEvent<ElementType?, SpellShape?, string> OnPipelineDone;
     
+    private const string InferenceWarmupSentence = "my name is inigo montoya, you killed my father, prepare to die";
     private AudioChunk lastRecordedChunk;
     private string lastTranscribedSentence;
     private bool isRecording;
@@ -54,14 +54,14 @@ public class VoiceInputPipeline : MonoBehaviour
 
     private IEnumerator Start()
     {
-        yield return WarmUpModels();
+        yield return WarmUpInference();
         pipelineCoroutine = StartCoroutine(Pipeline());
     }
 
-    private IEnumerator WarmUpModels()
+    private IEnumerator WarmUpInference()
     {
-        lastRecordedChunk = new AudioChunk();
-        yield return TranscribeAndInferCor(lastRecordedChunk);
+        lastTranscribedSentence = InferenceWarmupSentence;
+        yield return InferCoroutine();
     }
 
     private IEnumerator Pipeline()
@@ -78,7 +78,7 @@ public class VoiceInputPipeline : MonoBehaviour
             print(lastRecordedChunk.Length);
             
             //Transcribe with whisper than infer with sentis
-            yield return TranscribeAndInferCor(lastRecordedChunk);
+            yield return TranscribeAndInferCor();
             
             //get scores
             inferenceResult?.Dispose();
@@ -103,7 +103,7 @@ public class VoiceInputPipeline : MonoBehaviour
         }
     }
 
-    private IEnumerator TranscribeAndInferCor(AudioChunk recordedChunk)
+    private IEnumerator TranscribeAndInferCor()
     {
         //Transcribe with whisper than infer with sentis
         analysisTask = TranscribeAndInferAsync(lastRecordedChunk);
@@ -114,8 +114,19 @@ public class VoiceInputPipeline : MonoBehaviour
     private async Task<Tensor<float>> TranscribeAndInferAsync(AudioChunk recordedChunk)
     {
         lastTranscribedSentence = await transcription.Transcribe(recordedChunk);
+        return await InferAsync();
+    }
+
+    private async Task<Tensor<float>> InferAsync()
+    {
         var tensor = inference.Infer(lastTranscribedSentence);
         return await tensor.ReadbackAndCloneAsync();
+    }
+
+    private IEnumerator InferCoroutine()
+    {
+        var inferenceTask = InferAsync();
+        while (!inferenceTask.IsCompleted) yield return null;
     }
 
     public void RecordVoiceWithInputAction(InputAction.CallbackContext ctx)
