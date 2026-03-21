@@ -5,9 +5,9 @@ using UnityEngine;
 
 public static class ListHelper
 {
-    public static int MaxIndex(this List<float> list)
+    public static int MaxIndex(this List<float> list, out float maxValue)
     {
-        var maxValue = float.MinValue;
+        maxValue = float.MinValue;
         var maxIndex = -1;
         for (int i = 0; i < list.Count; i++)
         {
@@ -19,5 +19,10 @@ public static class ListHelper
         }
         
         return maxIndex;
+    }
+    
+    public static int MaxIndex(this List<float> list)
+    {
+        return list.MaxIndex(out _);
     }
 }
