@@ -5,6 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a596cb66-4fb7-4984-9213-90167ceb81fe" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Final Project depracated/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Final Project depracated/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ElementLabel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ElementLabel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IInferenceLabel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IInferenceLabel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MagicManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MagicManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TempUIManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TempUIManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Transcription.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Transcription.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/VoiceInputPipeline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VoiceInputPipeline.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +30,7 @@
     <option name="firstShow" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="13" />
+    <option name="cachedIndexableFilesCount" value="17" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -25,6 +39,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1eb9db207454431c84a47bcd81e79c3746ae00/f0/f8abe19c/Task.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/31f3cd5c2a074982a9d5664e7709cac1212400/33/8a91a79f/SetupCoroutine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/31f3cd5c2a074982a9d5664e7709cac1212400/91/7f5873f4/UnityEvent`3.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -49,7 +64,7 @@
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;Unity Attach To.Attach to.executor&quot;: &quot;Debug&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;integrate-spell-database&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -60,6 +75,13 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecapSpentCounter">
+    <option name="endsOfQuotaMs" value="1774861212360" />
+    <option name="spentUsd" value="0.03856185" />
+  </component>
+  <component name="RecapUselessUpdatesCounter">
+    <option name="suspendCountdown" value="8" />
+  </component>
   <component name="RunManager" selected="Unity Attach To.Attach to">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.3.9f1\Editor\Unity.exe" />
@@ -108,6 +130,7 @@
       <workItem from="1774080936731" duration="3601000" />
       <workItem from="1774109540973" duration="10359000" />
       <workItem from="1774159129511" duration="396000" />
+      <workItem from="1774165225440" duration="1679000" />
     </task>
     <servers />
   </component>

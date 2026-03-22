@@ -16,7 +16,7 @@ public class VoiceInputPipeline : MonoBehaviour
     [Header("Settings")] [SerializeField] private bool keepMicrophoneOn;
     
     [Tooltip("Called whenever the pipeline is done with the label scores and sentence")] 
-    public UnityEvent<ElementType?, SpellShape?, string> OnPipelineDone;
+    public UnityEvent<SpellElement?, SpellDeliveryCategory?, string> OnPipelineDone;
     [Tooltip("Called whenever transcription is done")]
     public UnityEvent<string> OnTranscriptionDone;
     
@@ -99,7 +99,7 @@ public class VoiceInputPipeline : MonoBehaviour
             }
             
             //Get Best element and type
-            Managers.Instance.MagicManager.GetBestFitElementAndType(scores, out ElementType? element, out SpellShape? spellShape);
+            ManagersMaster.Instance.MagicManager.GetBestFitElementAndType(scores, out SpellElement? element, out SpellDeliveryCategory? spellShape);
             OnPipelineDone.Invoke(element, spellShape, lastTranscribedSentence);
             
             print($"Element: {element}, SpellShape: {spellShape}");
