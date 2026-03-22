@@ -9,6 +9,8 @@ namespace Player
 {
     public class CharacterComponents : MonoBehaviour, IDamageable
     {
+        public static CharacterComponents Instance;
+        
         public string GroundLayerName = "Ground";
 
         [SerializeField] private InputAction moveAction;
@@ -31,6 +33,8 @@ namespace Player
 
         private void Awake()
         {
+            Instance = this;
+            
             if (!_navMeshAgent)
                 _navMeshAgent =
                     GetComponent<NavMeshAgent>(); // called only in the rare case it wasn't set in the editor 
@@ -79,6 +83,8 @@ namespace Player
                 return;
             }
 
+            print(colliderHit.point);
+            
             if (!navMeshAgent.enabled)
                 return;
             navMeshAgent.SetDestination(colliderHit.point);

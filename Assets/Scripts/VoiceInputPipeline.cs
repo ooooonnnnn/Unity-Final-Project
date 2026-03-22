@@ -121,7 +121,7 @@ public class VoiceInputPipeline : MonoBehaviour
     {
         lastTranscribedSentence = await transcription.Transcribe(recordedChunk);
         OnTranscriptionDone.Invoke(lastTranscribedSentence);
-        print("Called event with text: " + lastTranscribedSentence);
+        // print("Called event with text: " + lastTranscribedSentence);
         return await InferAsync();
     }
 

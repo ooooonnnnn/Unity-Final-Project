@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 1324344487021364586}
   - component: {fileID: 8112018811050539468}
   - component: {fileID: 2272382252505999024}
+  - component: {fileID: 2515694236727424986}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -386,6 +387,30 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2515694236727424986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7905686304780626972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b68e55e16b1964f823326790c2c563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpellCaster
+  projectilePrefab: {fileID: 2433654135293210166, guid: 713bb4c166b081449b4d9b76b9414f06, type: 3}
+  areaOfEffectPrefab: {fileID: 2433654135293210166, guid: 50e4a25a54aa77a439035d0eb3e827a4, type: 3}
+  strikePrefab: {fileID: 6810343919242758281, guid: e5d640c8806a1a347b386e684d084a70, type: 3}
+  spellCombos: []
+  ignorePlayer: 1
+  ignoreEnemies: 0
+  OnSpellCast:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpellCastFailed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &4058808430387471091
 PrefabInstance:
   m_ObjectHideFlags: 0
