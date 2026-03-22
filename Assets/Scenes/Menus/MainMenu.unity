@@ -272,15 +272,23 @@ PrefabInstance:
       objectReference: {fileID: 1526519646}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_ActionId
       value: b548cc4f-9aa6-4dd1-9c00-62fa2202bff8
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionId
+      value: 1007ec9b-a6ee-4944-9af2-97ca435783fa
+      objectReference: {fileID: 0}
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_ActionName
       value: 'Player/Move To Position[/Mouse/rightButton]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionName
+      value: 'Player/Kill_Player[/Keyboard/l]'
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.size
@@ -292,6 +300,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
@@ -307,6 +319,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
@@ -319,6 +335,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 830732006386685919, guid: f006a251aa3075847907ef645f75bceb, type: 3}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 620722399978488420, guid: 4a84d84a063210740b27ba40dfe4a3e4, type: 3}
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -328,6 +348,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
@@ -343,6 +367,10 @@ PrefabInstance:
       value: MoveCharacter
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KillPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SceneChangerTest, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -355,6 +383,10 @@ PrefabInstance:
       value: Player.CharacterComponents, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Managers.GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -364,6 +396,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1777772359667455690, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}

@@ -6,9 +6,8 @@ namespace Managers
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance { get; private set; }
-        public GameObject spawnPoint;
 
-        //[SerializeField] private InputManager inputManager;
+
         [SerializeField] private CharacterComponents selectedCharacter;
         [SerializeField] private UIManager uiManager;
 
@@ -26,6 +25,8 @@ namespace Managers
 
         private void OnEnable()
         {
+            
+            
             selectedCharacter.OnHealthChanged += UpdateHealth;
             selectedCharacter.OnPlayerDied += PlayerLost;
             EnemySpawner.OnWaveCompleted += PlayerWon;
@@ -41,6 +42,11 @@ namespace Managers
             selectedCharacter.OnHealthChanged -= UpdateHealth;
             selectedCharacter.OnPlayerDied -= PlayerLost;
             EnemySpawner.OnWaveCompleted -= PlayerWon;
+        }
+
+        public void KillPlayer()
+        {
+          selectedCharacter.TakeDamage(100f);
         }
 
         private void PlayerWon()
