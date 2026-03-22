@@ -29,18 +29,6 @@ public class SpellCaster : MonoBehaviour
     //     strikeBehavior = strikePrefab.GetComponent<StrikeBehavior>();
     // }
 
-    private void Start()
-    {
-        //Subscribe to voice input pipeline
-        ManagersMaster.Instance.VoiceInputPipeline.OnPipelineDone.AddListener(CastSpellFromParameters);
-        ManagersMaster.Instance.VoiceInputPipeline.OnPipelineDone.AddListener((_,_,_) => print("Recieved command"));
-    }
-
-    private void OnDestroy()
-    {
-        ManagersMaster.Instance.VoiceInputPipeline.OnPipelineDone.RemoveListener(CastSpellFromParameters);
-    }
-
     public void SetTarget(Transform target)
     {
         _target = target;

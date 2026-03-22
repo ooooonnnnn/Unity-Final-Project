@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9370225a2ca94276b870d5f87b0db55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logLevel: 1
+  logLevel: 2
   modelPath: Whisper/ggml-tiny.bin
   isModelPathInStreamingAssets: 1
   initOnAwake: 1
@@ -99,6 +99,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   whisper: {fileID: 5269053707485670611}
+--- !u!1 &121295444831299379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7881068615531503079}
+  - component: {fileID: 1803902747063541904}
+  m_Layer: 0
+  m_Name: UI Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7881068615531503079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121295444831299379}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1777772359667455690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1803902747063541904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121295444831299379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e409e7f2be15e4fae5821af9f5dd96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TempUIManager
+  subtitles: {fileID: 0}
+  lingerTime: 3
+  deviceDropdown: {fileID: 0}
 --- !u!1 &1827103779698237268
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,6 +303,26 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b548cc4f-9aa6-4dd1-9c00-62fa2202bff8
+    m_ActionName: 'Player/Move To Position[/Mouse/rightButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 620722399978488420, guid: 4a84d84a063210740b27ba40dfe4a3e4, type: 3}
+        m_TargetAssemblyTypeName: Managers.GameManager, Assembly-CSharp
+        m_MethodName: KillPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1007ec9b-a6ee-4944-9af2-97ca435783fa
+    m_ActionName: 'Player/Kill_Player[/Keyboard/l]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -409,6 +476,7 @@ Transform:
   - {fileID: 8764081375368026569}
   - {fileID: 1048655242097162238}
   - {fileID: 1222633909818226369}
+  - {fileID: 7881068615531503079}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1728618778984684980
@@ -426,6 +494,7 @@ MonoBehaviour:
   magicManager: {fileID: 5695729898212290854}
   voiceInputPipeline: {fileID: 2603508415342831387}
   recorder: {fileID: 3831154209054863583}
+  playerInput: {fileID: 0}
 --- !u!1 &7651796052146048082
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,9 +609,9 @@ MonoBehaviour:
   - an ice spell
   - a spell that created bright light
   - a spell that caused darkness
-  - 
-  - 
-  - 
+  - a projectile that flew from his wand
+  - an enchantment that affected a large area
+  - a targeted attack that hit a single enemy
   hypothesisPattern: The result was {0}.
 --- !u!114 &6709915161760170860
 MonoBehaviour:

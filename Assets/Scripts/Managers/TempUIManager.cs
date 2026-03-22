@@ -31,6 +31,7 @@ public class TempUIManager : MonoBehaviour
     private void Start()
     {
         subtitles.text = "";
+        ManagersMaster.Instance.VoiceInputPipeline.OnTranscriptionDone.AddListener(SetSubtitleText);
     }
 
     #region Subtitles

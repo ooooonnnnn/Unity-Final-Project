@@ -27,6 +27,8 @@ namespace Player
 
         public Collider playerCollider => _PlayerCollider;
         [SerializeField] private Collider _PlayerCollider;
+        
+        [SerializeField] private SpellCaster spellCaster;
 
 
         private float health;
@@ -55,10 +57,12 @@ namespace Player
             // moveInputEvent.AddListener(MoveCharacter);
             moveAction.action.Enable();
             moveAction.action.performed += MoveCharacter;
+            ManagersMaster.Instance.VoiceInputPipeline.OnPipelineDone.AddListener(spellCaster.CastSpellFromParameters);
         }
-
+        
         private void OnDestroy()
         {
+            ManagersMaster.Instance.VoiceInputPipeline.OnPipelineDone.RemoveListener(spellCaster.CastSpellFromParameters);
             moveAction.action.performed -= MoveCharacter;
         }
 
@@ -70,6 +74,7 @@ namespace Player
         private void OnValidate()
         {
             _navMeshAgent = GetComponent<NavMeshAgent>(); //editor time
+            spellCaster = GetComponent<SpellCaster>();
         }
 
         public void TakeDamage(float damage)
