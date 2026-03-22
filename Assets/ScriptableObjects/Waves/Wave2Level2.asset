@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d7303011ac5164bb447421d65b0fa2, type: 3}
+  m_Name: Wave2Level2
+  m_EditorClassIdentifier: Assembly-CSharp::ScriptsMilana.WaveData
+  enemyPrefabs:
+  - {fileID: 8520818316116910619, guid: 23d91e9b654e09945a8960af9df0405c, type: 3}
+  - {fileID: 2044672169886790855, guid: 44aa7fefab5b6ae40b621681d87b44df, type: 3}
+  - {fileID: 1188688411704847128, guid: b583b6ff272f6584884759faf09586e7, type: 3}
+  totalEnemies: 6
+  batchSize: 3
+  spawnInterval: 2
+  delayAfterWave: 0

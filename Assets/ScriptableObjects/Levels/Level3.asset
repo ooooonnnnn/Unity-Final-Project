@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8c203ceb572ef54eb29b81485def289, type: 3}
+  m_Name: Level3
+  m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  levelName: Level3
+  waves:
+  - {fileID: 11400000, guid: e0e17176ec975184885282e4a3c8d0fc, type: 2}
+  - {fileID: 11400000, guid: f195666dd9381554ab1f60dc97016290, type: 2}
+  - {fileID: 11400000, guid: 878e232ec0b379d45b1c83e18f56e188, type: 2}
+  levelIndex: 2
