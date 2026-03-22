@@ -276,15 +276,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_ActionId
-      value: 49accd4b-14e0-46cf-b806-5439e7d6d9b1
+      value: b548cc4f-9aa6-4dd1-9c00-62fa2202bff8
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_ActionName
-      value: 'Player/MoveToPoint[/Mouse/position]'
+      value: 'Player/Move To Position[/Mouse/rightButton]'
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.size
@@ -295,6 +299,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
@@ -303,11 +311,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 830732006386685919, guid: f006a251aa3075847907ef645f75bceb, type: 3}
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 830732006386685919, guid: f006a251aa3075847907ef645f75bceb, type: 3}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
@@ -319,6 +335,10 @@ PrefabInstance:
       value: ChangeScene
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MoveCharacter
       objectReference: {fileID: 0}
@@ -327,11 +347,19 @@ PrefabInstance:
       value: SceneChangerTest, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player.CharacterComponents, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Camera.CharacterComponents, Assembly-CSharp
+      value: Player.CharacterComponents, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}

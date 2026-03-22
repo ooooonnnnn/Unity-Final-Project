@@ -89,12 +89,12 @@
                 },
                 {
                     "name": "Move To Position",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "b548cc4f-9aa6-4dd1-9c00-62fa2202bff8",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -484,15 +484,37 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "c70b23d1-9543-488e-a948-cb9aa0cf1598",
+                    "name": "One Modifier",
+                    "id": "a2b01426-99a8-47b2-8f2d-42b114bd647c",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move To Position",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "b270af59-2eb2-4be7-a879-a481a7ee0125",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
+                    "groups": "",
                     "action": "Move To Position",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "6c5ad575-6cda-4962-8e85-5f1a6cee978f",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move To Position",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },

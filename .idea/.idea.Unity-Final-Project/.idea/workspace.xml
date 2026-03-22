@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de8aab09-6f8e-499e-bb9b-e513b91e8642" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Final-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Final-Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Enchanted Land SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Enchanted Land SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Managers/InputManager.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Managers/InputManager.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level 2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level 3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level 3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menus/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menus/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/MultiCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/MultiCharacterController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterComponents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,10 +59,10 @@
 }</component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1776528027492" />
-    <option name="spentUsd" value="0.12341135" />
+    <option name="spentUsd" value="0.18518035" />
   </component>
   <component name="RecapUselessUpdatesCounter">
-    <option name="suspendCountdown" value="4" />
+    <option name="suspendCountdown" value="3" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
