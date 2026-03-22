@@ -44,6 +44,7 @@ public class VoiceInputPipeline : MonoBehaviour
     {
         microphoneRecord.OnRecordStop -= SaveAudioChunk; 
         inferenceResult.Dispose();
+        analysisTask.Dispose();
     }
 
     public void SetInferenceLabels(string[] labels)

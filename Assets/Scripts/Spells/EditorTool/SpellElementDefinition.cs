@@ -7,13 +7,11 @@ public class SpellElementDefinition : ScriptableObject, IInferenceLabel
     public Color elementColor = Color.white;
     [TextArea] public string description;
 
-    [Header("Parameters")] 
-    public ElementType elementType;
+    [Header("Parameters")]
+    public SpellElement elementEnum;
     public float basePowerModifier = 1f;
     public float statusChance = 0f;
-    
-    [Header("Inference")]
     [TextArea] public string inferenceLabel;
-
     public string GetLabel() => inferenceLabel;
+    
 }
