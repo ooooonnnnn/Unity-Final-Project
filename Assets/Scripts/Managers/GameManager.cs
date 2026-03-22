@@ -11,21 +11,21 @@ namespace Managers
         [SerializeField] private CharacterComponents selectedCharacter;
         [SerializeField] private UIManager uiManager;
 
-        private void Awake()
-        {
-            if (Instance && Instance != this)
-            {
-                Destroy(gameObject);
-                return;
-            }
+        // private void Awake()
+        // {
+        //     if (Instance && Instance != this)
+        //     {
+        //         Destroy(gameObject);
+        //         return;
+        //     }
+        //
+        //     Instance = this;
+        //     DontDestroyOnLoad(gameObject);
+        // }
 
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-
-        private void OnEnable()
+        private void Start()
         {
-            
+            selectedCharacter = CharacterComponents.Instance;
             
             selectedCharacter.OnHealthChanged += UpdateHealth;
             selectedCharacter.OnPlayerDied += PlayerLost;

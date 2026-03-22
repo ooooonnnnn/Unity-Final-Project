@@ -40,12 +40,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3701007124455539662}
-  - component: {fileID: 3219130732831670685}
   - component: {fileID: 5800725733803338303}
   - component: {fileID: 830732006386685919}
   - component: {fileID: 1324344487021364586}
   - component: {fileID: 8112018811050539468}
   - component: {fileID: 2515694236727424986}
+  - component: {fileID: -8292290377966939922}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -70,28 +70,6 @@ Transform:
   - {fileID: 1069439342604381901}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &3219130732831670685
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7905686304780626972}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.1
-  m_Speed: 10
-  m_Acceleration: 100
-  avoidancePriority: 50
-  m_AngularSpeed: 2000
-  m_StoppingDistance: 0.1
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!136 &5800725733803338303
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -128,16 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   GroundLayerName: Ground
-  moveAction:
-    m_Name: Move
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 1f46dc0d-8b00-4854-8d65-aa698b77bacf
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  _navMeshAgent: {fileID: 3219130732831670685}
+  moveAction: {fileID: -4844721777110641953, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  _navMeshAgent: {fileID: -8292290377966939922}
   _cameraFollowTarget: {fileID: 1069439342604381901}
   _PlayerCollider: {fileID: 5800725733803338303}
 --- !u!82 &1324344487021364586
@@ -288,6 +258,28 @@ MonoBehaviour:
   OnSpellCastFailed:
     m_PersistentCalls:
       m_Calls: []
+--- !u!195 &-8292290377966939922
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7905686304780626972}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 10
+  m_Acceleration: 100
+  avoidancePriority: 50
+  m_AngularSpeed: 2000
+  m_StoppingDistance: 0.1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &4058808430387471091
 PrefabInstance:
   m_ObjectHideFlags: 0

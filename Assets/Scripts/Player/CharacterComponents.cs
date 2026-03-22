@@ -13,7 +13,7 @@ namespace Player
         
         public string GroundLayerName = "Ground";
 
-        [SerializeField] private InputAction moveAction;
+        [SerializeField] private InputActionReference moveAction;
         private PlayerInput.ActionEvent moveInputEvent;
         
         public const float MAX_HEALTH = 100f;
@@ -35,26 +35,37 @@ namespace Player
         {
             Instance = this;
             
-            if (!_navMeshAgent)
-                _navMeshAgent =
-                    GetComponent<NavMeshAgent>(); // called only in the rare case it wasn't set in the editor 
+            // if (!_navMeshAgent)
+            //     _navMeshAgent =
+            //         GetComponent<NavMeshAgent>(); // called only in the rare case it wasn't set in the editor 
 
 
             health = MAX_HEALTH;
             OnHealthChanged?.Invoke(health);
             
-            //subscribe to input manager
-            moveInputEvent =
-                ManagersMaster.Instance.PlayerInput.actionEvents.
-                    First(a => a.actionName == moveAction.name);
-            
-            moveInputEvent.AddListener(MoveCharacter);
+        }
+
+        private void Start()
+        {
+            // //subscribe to input manager
+            // moveInputEvent =
+            //     ManagersMaster.Instance.PlayerInput.actionEvents.
+            //         First(a => a.actionName == moveAction.name);
+            //
+            // moveInputEvent.AddListener(MoveCharacter);
+            moveAction.action.Enable();
+            moveAction.action.performed += MoveCharacter;
         }
 
         private void OnDestroy()
         {
-            moveInputEvent.RemoveListener(MoveCharacter);
+            moveAction.action.performed -= MoveCharacter;
         }
+
+        // private void Update()
+        // {
+        //     print(navMeshAgent.isOnNavMesh);
+        // }
 
         private void OnValidate()
         {
@@ -83,7 +94,7 @@ namespace Player
                 return;
             }
 
-            print(colliderHit.point);
+            // print(colliderHit.point);
             
             if (!navMeshAgent.enabled)
                 return;

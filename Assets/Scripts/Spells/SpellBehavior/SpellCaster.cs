@@ -19,17 +19,21 @@ public class SpellCaster : MonoBehaviour
 
     private Transform _target; 
     
-    private ProjectileBehavior projectileBehavior;
-    private AreaOfEffectBehavior areaOfEffectCombo;
-    private StrikeBehavior strikeBehavior;
+    // private ProjectileBehavior projectileBehavior;
+    // private AreaOfEffectBehavior areaOfEffectCombo;
+    // private StrikeBehavior strikeBehavior;
 
-    private void Awake()
+    // private void Awake()
+    // {
+    //     projectileBehavior = projectilePrefab.GetComponent<ProjectileBehavior>();
+    //     strikeBehavior = strikePrefab.GetComponent<StrikeBehavior>();
+    // }
+
+    private void Start()
     {
-        projectileBehavior = projectilePrefab.GetComponent<ProjectileBehavior>();
-        strikeBehavior = strikePrefab.GetComponent<StrikeBehavior>();
-        
         //Subscribe to voice input pipeline
         ManagersMaster.Instance.VoiceInputPipeline.OnPipelineDone.AddListener(CastSpellFromParameters);
+        ManagersMaster.Instance.VoiceInputPipeline.OnPipelineDone.AddListener((_,_,_) => print("Recieved command"));
     }
 
     private void OnDestroy()
@@ -117,10 +121,12 @@ public class SpellCaster : MonoBehaviour
     {
         if (element == null || type == null)
         {
+            print("Invalid spell parameters");
             OnSpellCastFailed?.Invoke();
             return;
         }
         var combo = ManagersMaster.Instance.MagicManager.GetComboDefinition(element.Value, type.Value);
+        print(combo.element.GetLabel());
         
         CastSpellFromCombo(combo);
     }
