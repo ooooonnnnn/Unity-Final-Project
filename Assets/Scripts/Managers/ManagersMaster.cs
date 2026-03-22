@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Whisper.Utils;
 
 public class ManagersMaster : MonoBehaviour
@@ -8,9 +9,12 @@ public class ManagersMaster : MonoBehaviour
     [SerializeField, HideInInspector] private MagicManager magicManager;
     [SerializeField, HideInInspector] private VoiceInputPipeline voiceInputPipeline;
     [SerializeField, HideInInspector] private MicrophoneRecord recorder;
+    [SerializeField, HideInInspector] private PlayerInput playerInput;
     
     public MagicManager MagicManager => magicManager;
     public MicrophoneRecord Recorder => recorder;
+    public VoiceInputPipeline VoiceInputPipeline => voiceInputPipeline;
+    public PlayerInput PlayerInput => playerInput;
 
     private void OnValidate()
     {

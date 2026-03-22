@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Interface;
 using UnityEngine;
 using UnityEngine.AI;
@@ -9,6 +10,9 @@ namespace Player
     public class CharacterComponents : MonoBehaviour, IDamageable
     {
         public string GroundLayerName = "Ground";
+
+        [SerializeField] private InputAction moveAction;
+        private PlayerInput.ActionEvent moveInputEvent;
         
         public const float MAX_HEALTH = 100f;
         public event Action OnPlayerDied;
@@ -34,7 +38,19 @@ namespace Player
 
             health = MAX_HEALTH;
             OnHealthChanged?.Invoke(health);
+            
+            // //subscribe to input manager
+            // moveInputEvent =
+            //     ManagersMaster.Instance.PlayerInput.actionEvents.
+            //         First(a => a.actionName == moveAction.name);
+            //
+            // moveInputEvent.AddListener(MoveCharacter);
         }
+
+        // private void OnDestroy()
+        // {
+        //     moveInputEvent.RemoveListener(MoveCharacter);
+        // }
 
         private void OnValidate()
         {
@@ -55,6 +71,7 @@ namespace Player
         
         public void MoveCharacter(InputAction.CallbackContext ctx)
         {
+            if (ctx.phase == InputActionPhase.Canceled) return;
             Ray ray = UnityEngine.Camera.main.ScreenPointToRay(ctx.ReadValue<Vector2>());
             Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 1f);
             if (!Physics.Raycast(ray, out RaycastHit colliderHit, 10000, LayerMask.GetMask(GroundLayerName)))
