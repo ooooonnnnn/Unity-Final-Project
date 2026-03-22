@@ -43,18 +43,18 @@ namespace Player
             health = MAX_HEALTH;
             OnHealthChanged?.Invoke(health);
             
-            // //subscribe to input manager
-            // moveInputEvent =
-            //     ManagersMaster.Instance.PlayerInput.actionEvents.
-            //         First(a => a.actionName == moveAction.name);
-            //
-            // moveInputEvent.AddListener(MoveCharacter);
+            //subscribe to input manager
+            moveInputEvent =
+                ManagersMaster.Instance.PlayerInput.actionEvents.
+                    First(a => a.actionName == moveAction.name);
+            
+            moveInputEvent.AddListener(MoveCharacter);
         }
 
-        // private void OnDestroy()
-        // {
-        //     moveInputEvent.RemoveListener(MoveCharacter);
-        // }
+        private void OnDestroy()
+        {
+            moveInputEvent.RemoveListener(MoveCharacter);
+        }
 
         private void OnValidate()
         {

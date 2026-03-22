@@ -127,6 +127,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   GroundLayerName: Ground
+  moveAction:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c37a3207-9183-4e59-9b94-0185d82551f0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   _navMeshAgent: {fileID: 7009246980342651816}
   _cameraFollowTarget: {fileID: 2570059278487553088}
   _PlayerCollider: {fileID: 3038907549213921382}
