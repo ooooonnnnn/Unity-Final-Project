@@ -2061,33 +2061,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1019528265}
-    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneChangerTest, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 504782930834614481, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1777772359667455690, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2129,52 +2105,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2603508415342831387, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: keepMicrophoneOn
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2603508415342831387, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: OnTranscriptionDone.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2603508415342831387, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: OnTranscriptionDone.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 532067728}
-    - target: {fileID: 2603508415342831387, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: OnTranscriptionDone.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2603508415342831387, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: OnTranscriptionDone.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetSubtitleText
-      objectReference: {fileID: 0}
-    - target: {fileID: 2603508415342831387, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: OnTranscriptionDone.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TempUIManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2603508415342831387, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: OnTranscriptionDone.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3831154209054863583, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: echo
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5915005458564362342, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
       propertyPath: m_Name
       value: Persistent Managers
-      objectReference: {fileID: 0}
-    - target: {fileID: 6073504111963615071, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: classificationThreshold
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8320053824274423545, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: inputSentence
-      value: underworld spheroid
-      objectReference: {fileID: 0}
-    - target: {fileID: 8320053824274423545, guid: 36a46c7acd338294e977edab770ca4b9, type: 3}
-      propertyPath: 'labels.Array.data[0]'
-      value: a fire spell
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

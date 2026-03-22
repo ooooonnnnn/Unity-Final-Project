@@ -13,16 +13,48 @@ MonoBehaviour:
   m_Name: _SpellDatabase
   m_EditorClassIdentifier: Assembly-CSharp::SpellDatabase
   elements:
-  - {fileID: 11400000, guid: 815cbf6f41857864cb24e71b47bc1457, type: 2}
-  - {fileID: 11400000, guid: ebac76c01476dc041aa2c0e78964dcad, type: 2}
-  - {fileID: 11400000, guid: f5f16b54052bb3f4696c4888a4496f3c, type: 2}
-  - {fileID: 11400000, guid: deca6d7687f9fc9409f699662fc456ec, type: 2}
+  - {fileID: 11400000, guid: 017e092813888774caf4a58bb7592423, type: 2}
+  - {fileID: 11400000, guid: 192864191ed117645ace4a9fd260946c, type: 2}
+  - {fileID: 11400000, guid: d04c5ec1024d26e4196edfd913426be7, type: 2}
+  - {fileID: 11400000, guid: f60cc3903ae959d47a92db07c5745d22, type: 2}
   spellTypes:
-  - {fileID: 11400000, guid: ac3842ca7a979594095a15f44b6141b8, type: 2}
-  - {fileID: 11400000, guid: b872474e771a81b4b89a4479f9c652f2, type: 2}
-  - {fileID: 11400000, guid: b3d549dcc2efc8948be4531ef700724c, type: 2}
-  - {fileID: 11400000, guid: 5d9a6c445b506b242ac9b455942d8584, type: 2}
+  - {fileID: 11400000, guid: 6c06b7eb3ec427842bf748deea117991, type: 2}
+  - {fileID: 11400000, guid: 976b0847a0fed65499c14e91d0b66608, type: 2}
+  - {fileID: 11400000, guid: 419d39a02f4a34242a43cbf6da5cc315, type: 2}
   combos:
-  - element: {fileID: 11400000, guid: 815cbf6f41857864cb24e71b47bc1457, type: 2}
-    spellType: {fileID: 11400000, guid: ac3842ca7a979594095a15f44b6141b8, type: 2}
-    combo: {fileID: 11400000, guid: ad8d9264639efa8439732a84fdbc5a99, type: 2}
+  - element: {fileID: 11400000, guid: 017e092813888774caf4a58bb7592423, type: 2}
+    spellType: {fileID: 11400000, guid: 6c06b7eb3ec427842bf748deea117991, type: 2}
+    combo: {fileID: 11400000, guid: 60ada02ef900e6b489c4dcff3a6e5da7, type: 2}
+  - element: {fileID: 11400000, guid: 192864191ed117645ace4a9fd260946c, type: 2}
+    spellType: {fileID: 11400000, guid: 6c06b7eb3ec427842bf748deea117991, type: 2}
+    combo: {fileID: 11400000, guid: b20b4f3ebf4afed4bba47be76202b14e, type: 2}
+  - element: {fileID: 11400000, guid: d04c5ec1024d26e4196edfd913426be7, type: 2}
+    spellType: {fileID: 11400000, guid: 6c06b7eb3ec427842bf748deea117991, type: 2}
+    combo: {fileID: 11400000, guid: 1fc1778d8cef8054f8ac85f2176eba34, type: 2}
+  - element: {fileID: 11400000, guid: f60cc3903ae959d47a92db07c5745d22, type: 2}
+    spellType: {fileID: 11400000, guid: 6c06b7eb3ec427842bf748deea117991, type: 2}
+    combo: {fileID: 11400000, guid: a1e453d54864e4340beafa85c58d217d, type: 2}
+  - element: {fileID: 11400000, guid: f60cc3903ae959d47a92db07c5745d22, type: 2}
+    spellType: {fileID: 11400000, guid: 976b0847a0fed65499c14e91d0b66608, type: 2}
+    combo: {fileID: 11400000, guid: 7ae80230ee84beb439fdc837860e3657, type: 2}
+  - element: {fileID: 11400000, guid: d04c5ec1024d26e4196edfd913426be7, type: 2}
+    spellType: {fileID: 11400000, guid: 976b0847a0fed65499c14e91d0b66608, type: 2}
+    combo: {fileID: 11400000, guid: 7c9747c4cc4025544b0a651563196ad3, type: 2}
+  - element: {fileID: 11400000, guid: 192864191ed117645ace4a9fd260946c, type: 2}
+    spellType: {fileID: 11400000, guid: 976b0847a0fed65499c14e91d0b66608, type: 2}
+    combo: {fileID: 11400000, guid: 7a4eee2374de2104daa5de3b89f21870, type: 2}
+  - element: {fileID: 11400000, guid: 017e092813888774caf4a58bb7592423, type: 2}
+    spellType: {fileID: 11400000, guid: 976b0847a0fed65499c14e91d0b66608, type: 2}
+    combo: {fileID: 11400000, guid: f551c6475f5e81b4ea21929905cd5611, type: 2}
+  - element: {fileID: 11400000, guid: 017e092813888774caf4a58bb7592423, type: 2}
+    spellType: {fileID: 11400000, guid: 419d39a02f4a34242a43cbf6da5cc315, type: 2}
+    combo: {fileID: 11400000, guid: 226f0c54cf13661459d6f0c3c0fc65a6, type: 2}
+  - element: {fileID: 11400000, guid: 192864191ed117645ace4a9fd260946c, type: 2}
+    spellType: {fileID: 11400000, guid: 419d39a02f4a34242a43cbf6da5cc315, type: 2}
+    combo: {fileID: 11400000, guid: b17c70bdefd1ee74fb1acc22171d60a1, type: 2}
+  - element: {fileID: 11400000, guid: d04c5ec1024d26e4196edfd913426be7, type: 2}
+    spellType: {fileID: 11400000, guid: 419d39a02f4a34242a43cbf6da5cc315, type: 2}
+    combo: {fileID: 11400000, guid: 2857371137e1976418a2ea77667fe4fb, type: 2}
+  - element: {fileID: 11400000, guid: f60cc3903ae959d47a92db07c5745d22, type: 2}
+    spellType: {fileID: 11400000, guid: 419d39a02f4a34242a43cbf6da5cc315, type: 2}
+    combo: {fileID: 11400000, guid: 4b8b52148c822cf4abbb9c62e6dd8b3e, type: 2}

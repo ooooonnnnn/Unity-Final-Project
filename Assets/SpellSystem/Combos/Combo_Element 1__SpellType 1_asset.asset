@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf72a3b633144c44903981aea999c9f, type: 3}
+  m_Name: Combo_Element 1__SpellType 1_asset
+  m_EditorClassIdentifier: Assembly-CSharp::SpellComboDefinition
+  element: {fileID: 11400000, guid: 3a35508c4ca17394fb59eee820467547, type: 2}
+  spellType: {fileID: 11400000, guid: 5421e25b71f5b654888dd81b08f53d31, type: 2}
+  description: 
+  isUnlockedByDefault: 1
+  powerMultiplier: 1
+  duration: 1
+  speed: 10
+  radius: 1
+  prefab: {fileID: 0}

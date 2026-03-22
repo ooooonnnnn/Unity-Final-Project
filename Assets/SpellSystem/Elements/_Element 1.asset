@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c374c86895e1cb4b8778f0a0fbfefec, type: 3}
-  m_Name: Fire
+  m_Name: _Element 1
   m_EditorClassIdentifier: Assembly-CSharp::SpellElementDefinition
   elementColor: {r: 1, g: 1, b: 1, a: 1}
   description: 
-  elementEnum: 0
   basePowerModifier: 1
   statusChance: 0
-  inferenceLabel: a fire spell
+  AILabels: 

@@ -189,7 +189,19 @@ MonoBehaviour:
     m_ActionId: 27c5f898-bc57-4ee1-8800-db469aca5fe3
     m_ActionName: 'Player/Crouch[/Keyboard/c]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SceneChangerTest, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f1ba0d36-48eb-4cd5-b651-1c94a6531f70
     m_ActionName: 'Player/Jump[/Keyboard/space]'
   - m_PersistentCalls:
@@ -258,7 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1222633909818226369}
-  - component: {fileID: 6073504111963615071}
+  - component: {fileID: 5695729898212290854}
   m_Layer: 0
   m_Name: Magic Manager
   m_TagString: Untagged
@@ -281,7 +293,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1777772359667455690}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6073504111963615071
+--- !u!114 &5695729898212290854
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -290,11 +302,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4532827598946578288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f2e2dcf8d720904c884c4a10c6ca941, type: 3}
+  m_Script: {fileID: 11500000, guid: a47af5df6bbc3864ebd0594f28f9f150, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
-  spellDatabase: {fileID: 11400000, guid: ac108d06b77bfc94985fb020ea5b080a, type: 2}
-  classificationThreshold: 0
+  m_EditorClassIdentifier: Assembly-CSharp::MagicManager
+  spellDatabase: {fileID: 11400000, guid: c9dff3c3eb069774c9ef9bce4479fe82, type: 2}
+  classificationThreshold: 0.6
 --- !u!1 &4860299732965293653
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,9 +357,25 @@ MonoBehaviour:
   microphoneRecord: {fileID: 3831154209054863583}
   transcription: {fileID: 420194896549861194}
   inference: {fileID: 8320053824274423545}
+  keepMicrophoneOn: 1
   OnPipelineDone:
     m_PersistentCalls:
       m_Calls: []
+  OnTranscriptionDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TempUIManager, Assembly-CSharp
+        m_MethodName: SetSubtitleText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5915005458564362342
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,8 +423,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1107f73c028029a44bd1441cfa0b6ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  magicManager: {fileID: 6073504111963615071}
+  magicManager: {fileID: 5695729898212290854}
   voiceInputPipeline: {fileID: 2603508415342831387}
+  recorder: {fileID: 3831154209054863583}
 --- !u!1 &7651796052146048082
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +486,6 @@ MonoBehaviour:
   dropVadPart: 1
   vadStopTime: 3
   microphoneDropdown: {fileID: 0}
-  microphoneDefaultLabel: Default microphone
 --- !u!1 &9132579700605437164
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,10 +540,9 @@ MonoBehaviour:
   - an ice spell
   - a spell that created bright light
   - a spell that caused darkness
-  - 'a projectile that flew from his wand '
-  - an enchantment that affected a large area
-  - 'a targeted attack that hit a single enemy '
-  - 'an armor that covered him '
+  - 
+  - 
+  - 
   hypothesisPattern: The result was {0}.
 --- !u!114 &6709915161760170860
 MonoBehaviour:
