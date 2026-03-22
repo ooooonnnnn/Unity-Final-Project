@@ -1361,9 +1361,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82e409e7f2be15e4fae5821af9f5dd96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TempUIManager
-  subtitles: {fileID: 0}
+  subtitles: {fileID: 1623578657}
   lingerTime: 3
-  deviceDropdown: {fileID: 0}
+  deviceDropdown: {fileID: 1480481475}
 --- !u!4 &757246039
 Transform:
   m_ObjectHideFlags: 0

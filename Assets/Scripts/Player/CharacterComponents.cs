@@ -3,7 +3,7 @@ using Interface;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Camera
+namespace Player
 {
     public class CharacterComponents : MonoBehaviour, IDamageable
     {

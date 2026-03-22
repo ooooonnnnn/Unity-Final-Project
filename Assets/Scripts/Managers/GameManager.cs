@@ -1,4 +1,4 @@
-using Camera;
+using Player;
 using UnityEngine;
 
 namespace Managers

@@ -1,10 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WaterReflection : MonoBehaviour
 {
     // referenses
-    UnityEngine.Camera mainCamera;
-    UnityEngine.Camera reflectionCamera;
+    Camera mainCamera;
+    Camera reflectionCamera;
 
     [Tooltip("The plane where the camera will be reflected, the water plane or any object with the same position and rotation")]
     public Transform reflectionPlane;
@@ -22,9 +24,9 @@ public class WaterReflection : MonoBehaviour
 
     public void Awake()
     {
-        mainCamera = UnityEngine.Camera.main;
+        mainCamera = Camera.main;
 
-        reflectionCamera = GetComponent<UnityEngine.Camera>();
+        reflectionCamera = GetComponent<Camera>();
 
         Validate();
     }
