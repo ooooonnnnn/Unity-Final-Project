@@ -33,6 +33,8 @@ public class TempUIManager : MonoBehaviour
         subtitles.text = "";
     }
 
+    #region Subtitles
+
     public void SetSubtitleText(string text)
     {
         // print("Set subtitle text: " + text);
@@ -46,4 +48,15 @@ public class TempUIManager : MonoBehaviour
         yield return new WaitForSeconds(lingerTime);
         subtitles.text = "";
     }
+    
+    #endregion
+    
+    #region Microphone record
+    
+    public void SetMicDevice(int index)
+    {
+        Managers.Instance.Recorder.SelectedMicDevice = deviceDropdown.options[index].text;
+    }
+    
+    #endregion
 }

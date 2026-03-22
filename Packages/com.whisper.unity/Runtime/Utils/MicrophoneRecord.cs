@@ -292,7 +292,7 @@ namespace Whisper.Utils
             }
             
             // play echo sound
-            if (echo)
+            if (echo && data.Length > 0)
             {
                 var echoClip = AudioClip.Create("echo", data.Length,
                     _clip.channels, _clip.frequency, false);
