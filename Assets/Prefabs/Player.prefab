@@ -44,9 +44,7 @@ GameObject:
   - component: {fileID: 3038907549213921382}
   - component: {fileID: 4546573841560475930}
   - component: {fileID: 3314898824379637395}
-  - component: {fileID: 3685601595564817873}
   - component: {fileID: 5914331880644474612}
-  - component: {fileID: 8282797316037612474}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -128,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce76ec573cb1aa4185127e15a849cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  GroundLayerName: Ground
   _navMeshAgent: {fileID: 7009246980342651816}
   _cameraFollowTarget: {fileID: 2570059278487553088}
   _PlayerCollider: {fileID: 3038907549213921382}
@@ -228,22 +227,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3685601595564817873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7318191233419622573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cec419c5fabb8bd41b152d495e070df1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::KnockbackReciever
-  profile: {fileID: 11400000, guid: cfedae0f1f1b7fc4fbcc2bb0b5d7f7e3, type: 2}
-  settleVelocityThreshold: 0.1
-  knockbackAudio: {fileID: 3314898824379637395}
-  knockbackClip: {fileID: 8300000, guid: 3d9705a97605fa94b8f22017ee63ca5a, type: 3}
 --- !u!54 &5914331880644474612
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -271,22 +254,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8282797316037612474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7318191233419622573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37d5d219bd93a194ea3b9eeee40ba624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::KnockbackAnimatorDriver
-  animator: {fileID: 5505244748866516860}
-  slowThreshold: 3
-  fastSpeed: 3
-  slowSpeed: 1.2
 --- !u!1001 &2093077921295321837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -383,10 +350,5 @@ MonoBehaviour:
 --- !u!4 &1911393465560214790 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b01a7afa87e00aa45a9c56888ae84023, type: 3}
-  m_PrefabInstance: {fileID: 2093077921295321837}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &5505244748866516860 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: b01a7afa87e00aa45a9c56888ae84023, type: 3}
   m_PrefabInstance: {fileID: 2093077921295321837}
   m_PrefabAsset: {fileID: 0}
