@@ -749,6 +749,10 @@ PrefabInstance:
       propertyPath: selectedCharacter
       value: 
       objectReference: {fileID: 4546573839685715418}
+    - target: {fileID: 620722399978488420, guid: 4a84d84a063210740b27ba40dfe4a3e4, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Assembly-CSharp::Managers.GameManager
+      objectReference: {fileID: 0}
     - target: {fileID: 5240128609948245918, guid: 4a84d84a063210740b27ba40dfe4a3e4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.99611
@@ -1356,7 +1360,7 @@ PrefabInstance:
     - target: {fileID: 3239793051936552522, guid: be54248ffe1348f4fac63b64e42d353d, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: 2e284d90b9c5a994da86d744ce7bb66e, type: 2}
+      objectReference: {fileID: 23800000, guid: c5cd72619e1295b42b99be3db558ce89, type: 2}
     - target: {fileID: 8950826825954928012, guid: be54248ffe1348f4fac63b64e42d353d, type: 3}
       propertyPath: m_Name
       value: NavMesh

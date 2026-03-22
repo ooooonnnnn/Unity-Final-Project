@@ -21,7 +21,8 @@ namespace Managers
             }
 
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+
+          
         }
 
         private void OnEnable()
@@ -43,15 +44,25 @@ namespace Managers
             EnemySpawner.OnWaveCompleted -= PlayerWon;
         }
 
+<<<<<<< Updated upstream
+=======
+        public void KillPlayer()
+        {    if (!selectedCharacter)
+                selectedCharacter = CharacterComponents.Instance;
+            Debug.Log(selectedCharacter);
+            selectedCharacter.TakeDamage(100f);
+        }
+
+>>>>>>> Stashed changes
         private void PlayerWon()
         {
-          //  SceneManager.LoadScene("LevelSelect");
+            //  SceneManager.LoadScene("LevelSelect");
         }
 
 
         private void PlayerLost()
         {
-          // SceneManager.LoadScene("MainMenu");
+            // SceneManager.LoadScene("MainMenu");
         }
     }
 }
