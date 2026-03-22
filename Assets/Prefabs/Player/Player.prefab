@@ -44,9 +44,8 @@ GameObject:
   - component: {fileID: 5800725733803338303}
   - component: {fileID: 830732006386685919}
   - component: {fileID: 1324344487021364586}
-  - component: {fileID: 7260673515245448319}
   - component: {fileID: 8112018811050539468}
-  - component: {fileID: 7425196658891028687}
+  - component: {fileID: 1497656931189923193}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -128,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce76ec573cb1aa4185127e15a849cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  GroundLayerName: Ground
   _navMeshAgent: {fileID: 3219130732831670685}
   _cameraFollowTarget: {fileID: 1069439342604381901}
   _PlayerCollider: {fileID: 5800725733803338303}
@@ -228,22 +228,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7260673515245448319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7905686304780626972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cec419c5fabb8bd41b152d495e070df1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::KnockbackReciever
-  profile: {fileID: 11400000, guid: cfedae0f1f1b7fc4fbcc2bb0b5d7f7e3, type: 2}
-  settleVelocityThreshold: 0.1
-  knockbackAudio: {fileID: 1324344487021364586}
-  knockbackClip: {fileID: 8300000, guid: 3d9705a97605fa94b8f22017ee63ca5a, type: 3}
 --- !u!54 &8112018811050539468
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -271,7 +255,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7425196658891028687
+--- !u!114 &1497656931189923193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -280,13 +264,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 7905686304780626972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37d5d219bd93a194ea3b9eeee40ba624, type: 3}
+  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::KnockbackAnimatorDriver
-  animator: {fileID: 7582194160377765730}
-  slowThreshold: 3
-  fastSpeed: 3
-  slowSpeed: 1.2
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInputManager
+  m_NotificationBehavior: 0
+  m_MaxPlayerCount: -1
+  m_AllowJoining: 1
+  m_JoinBehavior: 0
+  m_PlayerJoinedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_PlayerLeftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_JoinAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 51b7adda-5fa8-459d-86db-ae69ee1adfd1
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_PlayerPrefab: {fileID: 0}
+  m_SplitScreen: 0
+  m_MaintainAspectRatioInSplitScreen: 0
+  m_FixedNumberOfSplitScreens: -1
+  m_SplitScreenRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1001 &4058808430387471091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -383,10 +395,5 @@ MonoBehaviour:
 --- !u!4 &4600833555967657240 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b01a7afa87e00aa45a9c56888ae84023, type: 3}
-  m_PrefabInstance: {fileID: 4058808430387471091}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &7582194160377765730 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: b01a7afa87e00aa45a9c56888ae84023, type: 3}
   m_PrefabInstance: {fileID: 4058808430387471091}
   m_PrefabAsset: {fileID: 0}

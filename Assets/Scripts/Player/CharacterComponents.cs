@@ -2,11 +2,14 @@ using System;
 using Interface;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 
 namespace Player
 {
     public class CharacterComponents : MonoBehaviour, IDamageable
     {
+        public string GroundLayerName = "Ground";
+        
         public const float MAX_HEALTH = 100f;
         public event Action OnPlayerDied;
         public event Action<float> OnHealthChanged;
@@ -48,6 +51,20 @@ namespace Player
             }
 
             OnHealthChanged?.Invoke(health);
+        }
+        
+        public void MoveCharacter(InputAction.CallbackContext ctx)
+        {
+            Ray ray = UnityEngine.Camera.main.ScreenPointToRay(ctx.ReadValue<Vector2>());
+            Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 1f);
+            if (!Physics.Raycast(ray, out RaycastHit colliderHit, 10000, LayerMask.GetMask(GroundLayerName)))
+            {
+                return;
+            }
+
+            if (!navMeshAgent.enabled)
+                return;
+            navMeshAgent.SetDestination(colliderHit.point);
         }
     }
 }
