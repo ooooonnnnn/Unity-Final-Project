@@ -5,35 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a596cb66-4fb7-4984-9213-90167ceb81fe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Water/WaterBlock_50m.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Water/WaterBlock_50m.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Water/WaterBlock_50m.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Water/WaterBlock_50m.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Water/WaterReflectionCamera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Water/WaterReflectionCamera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Water/WaterReflectionCamera.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Water/WaterReflectionCamera.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menus/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menus/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Demo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Demo.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Demo.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Info.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Info.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Info/Readme.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Info/Readme.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Info/Readme.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Info/Readme.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterBlock_50m.mesh" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterBlock_50m.mesh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterBlock_50m.mesh.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterBlock_50m.mesh.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterReflection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterReflection.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterReflection.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterReflection.renderTexture" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterReflection.renderTexture.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterReflection.renderTexture.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterShader.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterShader.shadergraph.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterShader.shadergraph.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterSurface_atlas.tif.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterSurface_atlas.tif.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterSurface_single.tif.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/WaterSurface_single.tif.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/Water_mat_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/Water_mat_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/Water_mat_01.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/Water_mat_01.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/Water_mat_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/Water_mat_02.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/Water_mat_02.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/Water_mat_02.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/Water_mat_03.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/Water_mat_03.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/Water_mat_03.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Simple Water Shader/Resources/Water_mat_03.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,10 +63,10 @@
 }</component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1774861212360" />
-    <option name="spentUsd" value="0.2112028" />
+    <option name="spentUsd" value="0.28442013" />
   </component>
   <component name="RecapUselessUpdatesCounter">
-    <option name="suspendCountdown" value="4" />
+    <option name="suspendCountdown" value="3" />
   </component>
   <component name="RunManager" selected="Unity Attach To.Attach to">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
