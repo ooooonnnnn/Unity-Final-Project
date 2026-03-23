@@ -1,5 +1,6 @@
 using Enemy;
 using Interface;
+using Player;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -30,8 +31,10 @@ public class EnemyBase : MonoBehaviour
 
     public static event System.Action<EnemyBase> OnEnemyKilled;
 
-    private void Awake()
+    private void Start()
     {
+        target = CharacterComponents.Instance.transform;
+        
         enemyTransform = transform;
 
         agent.speed = data.moveSpeed;

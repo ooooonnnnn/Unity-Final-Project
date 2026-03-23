@@ -2,12 +2,9 @@ using UnityEngine;
 
 public class AreaOfEffectBehavior : SpellBase
 {
-    protected override void Awake()
+    public void CastSpell()
     {
-        base.Awake();
-        spellCombo.spellType.spellTypeEnum = SpellDeliveryCategory.AOE;
-        
-        Collider[] targets = Physics.OverlapSphere(transform.position, spellCombo.radius / 2f);
+        Collider[] targets = Physics.OverlapSphere(transform.position, spellCombo.radius);
 
         foreach (var target in targets)
         {

@@ -93,8 +93,17 @@
                     "id": "b548cc4f-9aa6-4dd1-9c00-62fa2202bff8",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Kill_Player",
+                    "type": "Button",
+                    "id": "1007ec9b-a6ee-4944-9af2-97ca435783fa",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -515,6 +524,17 @@
                     "action": "Move To Position",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "534c276e-9302-4de7-b30b-15ea4a5a7774",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Kill_Player",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

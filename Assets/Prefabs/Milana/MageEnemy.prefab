@@ -257,11 +257,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellCaster
   projectilePrefab: {fileID: 2433654135293210166, guid: 713bb4c166b081449b4d9b76b9414f06, type: 3}
+  areaOfEffectPrefab: {fileID: 2433654135293210166, guid: 50e4a25a54aa77a439035d0eb3e827a4, type: 3}
   strikePrefab: {fileID: 6810343919242758281, guid: e5d640c8806a1a347b386e684d084a70, type: 3}
   spellCombos:
-  - {fileID: 11400000, guid: 60ada02ef900e6b489c4dcff3a6e5da7, type: 2}
+  - {fileID: 11400000, guid: b20b4f3ebf4afed4bba47be76202b14e, type: 2}
   ignorePlayer: 0
   ignoreEnemies: 1
+  OnSpellCast:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpellCastFailed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &7287361258545421370
 PrefabInstance:
   m_ObjectHideFlags: 0

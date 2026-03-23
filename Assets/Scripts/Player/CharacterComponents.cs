@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Interface;
 using UnityEngine;
 using UnityEngine.AI;
@@ -8,7 +9,12 @@ namespace Player
 {
     public class CharacterComponents : MonoBehaviour, IDamageable
     {
+        public static CharacterComponents Instance;
+        
         public string GroundLayerName = "Ground";
+
+        [SerializeField] private InputActionReference moveAction;
+        private PlayerInput.ActionEvent moveInputEvent;
         
         public const float MAX_HEALTH = 100f;
         public event Action OnPlayerDied;
@@ -21,24 +27,54 @@ namespace Player
 
         public Collider playerCollider => _PlayerCollider;
         [SerializeField] private Collider _PlayerCollider;
+        
+        [SerializeField] private SpellCaster spellCaster;
 
 
         private float health;
 
         private void Awake()
         {
-            if (!_navMeshAgent)
-                _navMeshAgent =
-                    GetComponent<NavMeshAgent>(); // called only in the rare case it wasn't set in the editor 
+            Instance = this;
+            
+            // if (!_navMeshAgent)
+            //     _navMeshAgent =
+            //         GetComponent<NavMeshAgent>(); // called only in the rare case it wasn't set in the editor 
 
 
             health = MAX_HEALTH;
             OnHealthChanged?.Invoke(health);
+            
         }
+
+        private void Start()
+        {
+            // //subscribe to input manager
+            // moveInputEvent =
+            //     ManagersMaster.Instance.PlayerInput.actionEvents.
+            //         First(a => a.actionName == moveAction.name);
+            //
+            // moveInputEvent.AddListener(MoveCharacter);
+            moveAction.action.Enable();
+            moveAction.action.performed += MoveCharacter;
+            ManagersMaster.Instance.VoiceInputPipeline.OnPipelineDone.AddListener(spellCaster.CastSpellFromParameters);
+        }
+        
+        private void OnDestroy()
+        {
+            ManagersMaster.Instance.VoiceInputPipeline.OnPipelineDone.RemoveListener(spellCaster.CastSpellFromParameters);
+            moveAction.action.performed -= MoveCharacter;
+        }
+
+        // private void Update()
+        // {
+        //     print(navMeshAgent.isOnNavMesh);
+        // }
 
         private void OnValidate()
         {
             _navMeshAgent = GetComponent<NavMeshAgent>(); //editor time
+            spellCaster = GetComponent<SpellCaster>();
         }
 
         public void TakeDamage(float damage)
@@ -55,6 +91,7 @@ namespace Player
         
         public void MoveCharacter(InputAction.CallbackContext ctx)
         {
+            if (ctx.phase == InputActionPhase.Canceled) return;
             Ray ray = UnityEngine.Camera.main.ScreenPointToRay(ctx.ReadValue<Vector2>());
             Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 1f);
             if (!Physics.Raycast(ray, out RaycastHit colliderHit, 10000, LayerMask.GetMask(GroundLayerName)))
@@ -62,6 +99,8 @@ namespace Player
                 return;
             }
 
+            // print(colliderHit.point);
+            
             if (!navMeshAgent.enabled)
                 return;
             navMeshAgent.SetDestination(colliderHit.point);

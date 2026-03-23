@@ -81,7 +81,7 @@ public class VoiceInputPipeline : MonoBehaviour
             while (!isRecording) yield return null;
             //Wait for stop record
             while (isRecording) yield return null;
-            print(lastRecordedChunk.Length);
+            // print(lastRecordedChunk.Length);
             
             //Transcribe with whisper than infer with sentis
             yield return TranscribeAndInferCor();
@@ -121,7 +121,7 @@ public class VoiceInputPipeline : MonoBehaviour
     {
         lastTranscribedSentence = await transcription.Transcribe(recordedChunk);
         OnTranscriptionDone.Invoke(lastTranscribedSentence);
-        print("Called event with text: " + lastTranscribedSentence);
+        // print("Called event with text: " + lastTranscribedSentence);
         return await InferAsync();
     }
 

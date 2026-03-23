@@ -1,3 +1,4 @@
+using Player;
 using UnityEngine;
 
 namespace Enemy
@@ -36,8 +37,8 @@ namespace Enemy
 
         public bool IsInRange()
         {
-            Vector3 ownerPos = _owner.position;
-            Vector3 targetPos = _target.position;
+            Vector3 ownerPos = transform.position;
+            Vector3 targetPos = CharacterComponents.Instance.transform.position;
 
             ownerPos.y = 0f;
             targetPos.y = 0f;

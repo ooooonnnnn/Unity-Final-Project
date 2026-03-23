@@ -21,32 +21,33 @@ public class SpellBase : MonoBehaviour
 
     public bool ignorePlayer = false;
     public bool ignoreEnemies = false;
-    protected ParticleSystem ActiveParticlePrefab;
     
+    protected ParticleSystem ActiveParticlePrefab;
+
 
     protected virtual void Awake()
     {
         gameObject.transform.parent = null; // Detach from caster to allow independent movement
 
-        switch (spellCombo.element.elementEnum)
-        {
-            case SpellElement.Fire:
-                    ActiveParticlePrefab = Instantiate(fireParticlePrefab, transform.position, transform.rotation);
-                    ActiveParticlePrefab.transform.parent = transform;
-                break;
-            case SpellElement.Ice:
-                    ActiveParticlePrefab = Instantiate(iceParticlePrefab, transform.position, transform.rotation);
-                    ActiveParticlePrefab.transform.parent = transform;
-                break;
-            case SpellElement.Light:
-            case SpellElement.Dark:
-                // Instantiate corresponding particle effects for Earth, Light, and Dark elements
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
+        InstantiateActiveParticle();
         StartCoroutine(DestroyAfterLifeTime());
     }
+
+    protected void InstantiateActiveParticle(bool paused = false)
+    {
+        ActiveParticlePrefab = spellCombo.element.elementEnum switch
+        {
+            SpellElement.Fire => Instantiate(fireParticlePrefab, transform.position, transform.rotation),
+            SpellElement.Ice => Instantiate(iceParticlePrefab, transform.position, transform.rotation),
+            SpellElement.Light => Instantiate(lightParticlePrefab, transform.position, transform.rotation),
+            SpellElement.Dark => Instantiate(darkParticlePrefab, transform.position, transform.rotation),
+            _ => throw new ArgumentOutOfRangeException()
+        };
+
+        ActiveParticlePrefab.transform.parent = transform;
+        if (paused) ActiveParticlePrefab.Pause();
+    }
+
     IEnumerator DestroyAfterLifeTime()
     {
         yield return new WaitForSeconds(spellCombo.duration);
@@ -55,10 +56,12 @@ public class SpellBase : MonoBehaviour
 
     protected virtual void OnCollisionEnter(Collision other)
     {
+        if (other.gameObject.CompareTag("Spell")) return; // Ignore collisions with other spells
         if (ignorePlayer && other.gameObject.CompareTag("Player")) return;
         if (ignoreEnemies && other.gameObject.CompareTag("Enemy")) return;
         other.gameObject.TryGetComponent<ITakeSpellData>(out var component);
         component?.TakeSpellData(spellCombo);
+        Debug.Log("Hit" + other.gameObject.name);
         SelfDestruct();
     }
 
@@ -69,10 +72,12 @@ public class SpellBase : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void ChangeElement(SpellComboDefinition newCombo)
+    public virtual void ChangeElement(SpellComboDefinition newCombo)
     {
-        //if (spellCombo.spellType != newCombo.spellType) return;
-        
+        if (spellCombo.spellType != newCombo.spellType) return;
+
         spellCombo = newCombo;
+        if (ActiveParticlePrefab) Destroy(ActiveParticlePrefab);
+        InstantiateActiveParticle();
     }
 }

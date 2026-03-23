@@ -7,8 +7,12 @@ public class MagicManager : MonoBehaviour
     [SerializeField] private SpellDatabase spellDatabase;
     [SerializeField, Tooltip("scores under this threshold yield no result")] private float classificationThreshold;
     public SpellDatabase SpellDatabase => spellDatabase;
-    
-    public SpellComboDefinition GetComboDefinition(SpellElementDefinition element, SpellTypeDefinition spellType) => spellDatabase.GetComboEntry(element, spellType).combo;
+
+    public SpellComboDefinition GetComboDefinition(SpellElement element, SpellDeliveryCategory spellType)
+    {
+        return spellDatabase.combos.Find(combo =>
+            combo.element.elementEnum == element && combo.spellType.deliveryCategory == spellType).combo;
+    }
 
     public string[] GetInferenceLabels()
     {

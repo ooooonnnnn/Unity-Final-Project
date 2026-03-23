@@ -12,21 +12,22 @@ namespace Managers
         [SerializeField] private CharacterComponents selectedCharacter;
         [SerializeField] private UIManager uiManager;
 
-        private void Awake()
-        {
-            if (Instance && Instance != this)
-            {
-                Destroy(gameObject);
-                return;
-            }
-
-            Instance = this;
-
-          
-        }
+        // private void Awake()
+        // {
+        //     if (Instance && Instance != this)
+        //     {
+        //         Destroy(gameObject);
+        //         return;
+        //     }
+        //
+        //     Instance = this;
+        //     DontDestroyOnLoad(gameObject);
+        // }
 
         private void OnEnable()
         {
+            selectedCharacter = CharacterComponents.Instance;
+            
             selectedCharacter.OnHealthChanged += UpdateHealth;
             selectedCharacter.OnPlayerDied += PlayerLost;
             EnemySpawner.OnWaveCompleted += PlayerWon;
@@ -44,25 +45,20 @@ namespace Managers
             EnemySpawner.OnWaveCompleted -= PlayerWon;
         }
 
-<<<<<<< Updated upstream
-=======
         public void KillPlayer()
-        {    if (!selectedCharacter)
-                selectedCharacter = CharacterComponents.Instance;
-            Debug.Log(selectedCharacter);
-            selectedCharacter.TakeDamage(100f);
+        {
+          selectedCharacter.TakeDamage(100f);
         }
 
->>>>>>> Stashed changes
         private void PlayerWon()
         {
-            //  SceneManager.LoadScene("LevelSelect");
+          //  SceneManager.LoadScene("LevelSelect");
         }
 
 
         private void PlayerLost()
         {
-            // SceneManager.LoadScene("MainMenu");
+          // SceneManager.LoadScene("MainMenu");
         }
     }
 }
