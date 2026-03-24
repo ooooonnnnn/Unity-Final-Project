@@ -37,26 +37,19 @@ namespace Player
         {
             Instance = this;
             
-            // if (!_navMeshAgent)
-            //     _navMeshAgent =
-            //         GetComponent<NavMeshAgent>(); // called only in the rare case it wasn't set in the editor 
 
-
-            health = MAX_HEALTH;
-            OnHealthChanged?.Invoke(health);
             
         }
 
         private void Start()
         {
-            // //subscribe to input manager
-            // moveInputEvent =
-            //     ManagersMaster.Instance.PlayerInput.actionEvents.
-            //         First(a => a.actionName == moveAction.name);
-            //
-            // moveInputEvent.AddListener(MoveCharacter);
+            
+            health = MAX_HEALTH;
+            OnHealthChanged?.Invoke(health);
+            
             moveAction.action.Enable();
             moveAction.action.performed += MoveCharacter;
+            
             ManagersMaster.Instance.VoiceInputPipeline.OnPipelineDone.AddListener(spellCaster.CastSpellFromParameters);
         }
         
@@ -65,11 +58,7 @@ namespace Player
             ManagersMaster.Instance.VoiceInputPipeline.OnPipelineDone.RemoveListener(spellCaster.CastSpellFromParameters);
             moveAction.action.performed -= MoveCharacter;
         }
-
-        // private void Update()
-        // {
-        //     print(navMeshAgent.isOnNavMesh);
-        // }
+        
 
         private void OnValidate()
         {

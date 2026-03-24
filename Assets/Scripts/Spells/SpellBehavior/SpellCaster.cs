@@ -1,5 +1,6 @@
 using System;
 using Managers;
+using Player;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,11 +24,10 @@ public class SpellCaster : MonoBehaviour
     // private AreaOfEffectBehavior areaOfEffectCombo;
     // private StrikeBehavior strikeBehavior;
 
-    // private void Awake()
-    // {
-    //     projectileBehavior = projectilePrefab.GetComponent<ProjectileBehavior>();
-    //     strikeBehavior = strikePrefab.GetComponent<StrikeBehavior>();
-    // }
+    private void Start()
+    {
+        _target = CharacterComponents.Instance.transform;
+    }
 
     public void SetTarget(Transform target)
     {
