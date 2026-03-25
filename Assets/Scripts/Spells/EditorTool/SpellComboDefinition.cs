@@ -3,19 +3,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewSpellCombo", menuName = "Spells/Spell Combo Definition")]
 public class SpellComboDefinition : ScriptableObject
 {
-    [Header("Links")]
-    public SpellElementDefinition element;
+    [Header("Links")] public SpellElementDefinition element;
     public SpellTypeDefinition spellType;
 
-    [Header("Description")]
-    [TextArea] public string description;
+    [Header("Description")] [TextArea] public string description;
 
-    [Header("Gameplay")]
-    public bool isUnlockedByDefault = true;
+    [Header("Gameplay")] public bool isUnlockedByDefault = true;
+    public float damage = 10f;
     public float powerMultiplier = 1f;
     public float duration = 5f;
     public float speed = 10f;
     public float radius = 1f;
     public GameObject prefab;
-    
 }

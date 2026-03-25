@@ -19,11 +19,18 @@ public class SpellCaster : MonoBehaviour
     public UnityEvent OnSpellCastFailed;
 
     private Transform _target; 
-    
+    private EnemyData enemyData;
+
     // private ProjectileBehavior projectileBehavior;
     // private AreaOfEffectBehavior areaOfEffectCombo;
     // private StrikeBehavior strikeBehavior;
 
+    
+    public void Initialize(EnemyData data)
+    {
+        enemyData = data;
+    }
+    
     private void Start()
     {
         _target = CharacterComponents.Instance.transform;
@@ -58,6 +65,8 @@ public class SpellCaster : MonoBehaviour
                     behavior.ignoreEnemies = ignoreEnemies;
                     
                     behavior.SetTarget(_target);
+                    behavior.SetDamage(enemyData.projectileDamage);
+
                 }
 
                 break;

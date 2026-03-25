@@ -1,3 +1,4 @@
+using Managers;
 using Player;
 using UnityEngine;
 
@@ -55,6 +56,8 @@ namespace Enemy
             {
                 spellCaster.CastSpell(); 
             }
+            
+            CharacterComponents.Instance.TakeDamage(combo.damage);
         }
     }
 }

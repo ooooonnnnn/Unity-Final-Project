@@ -1,169 +1,171 @@
 using System;
 using System.Collections;
 using Level;
+using Player;
 using Save;
 using UnityEngine;
 using Wave;
 using Random = UnityEngine.Random;
 
 
-    public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
+{
+    [SerializeField] private LevelData waves;
+    [SerializeField] private Transform[] spawnPoints;
+    [SerializeField] private Transform playerTarget;
+    [SerializeField] private GameObject levelCompleteUI;
+
+    private int enemiesSpawned;
+    private int enemiesAlive;
+    private WaveData wave;
+    private bool waitingForWaveEnd;
+
+
+    public static event Action<float> OnWaveDelayStarted;
+
+    public static event Action<float> OnWaveDelayUpdated;
+
+    public static event Action OnWaveCompleted;
+
+    public static event Action<int, int, int> OnEnemyCountChanged; // for the ui
+
+    public int EnemiesAlive => enemiesAlive;
+    public int EnemiesSpawned => enemiesSpawned;
+    public int TotalEnemies => wave.totalEnemies;
+
+    private void Start()
     {
-        [SerializeField] private LevelData waves;
-        [SerializeField] private Transform[] spawnPoints;
-        [SerializeField] private Transform playerTarget;
-        [SerializeField] private GameObject levelCompleteUI;
+        playerTarget = CharacterComponents.Instance.transform;
+        EnemyBase.OnEnemyKilled += HandleEnemyKilled;
+        OnWaveCompleted += HandleLevelComplete;
 
-        private int enemiesSpawned;
-        private int enemiesAlive;
-        private WaveData wave;
-        private bool waitingForWaveEnd;
-        
-        
-        
-        
-        public static event Action<float> OnWaveDelayStarted;
-        
-        public static event Action<float> OnWaveDelayUpdated;
-        
-        public static event Action OnWaveCompleted;
-    
-        public static event Action<int, int, int> OnEnemyCountChanged; // for the ui
-    
-        public int EnemiesAlive => enemiesAlive;
-        public int EnemiesSpawned => enemiesSpawned;
-        public int TotalEnemies => wave.totalEnemies;
+        StartCoroutine(SpawnRoutine(waves));
+    }
 
-        private void Start()
+    private IEnumerator SpawnRoutine(LevelData level)
+    {
+        for (int i = 0; i < level.waves.Length; i++)
         {
-            EnemyBase.OnEnemyKilled += HandleEnemyKilled;
-            OnWaveCompleted += HandleLevelComplete;
+            wave = level.waves[i];
+            Debug.Log("Wave " + wave);
 
-            StartCoroutine(SpawnRoutine(waves));
-        }
-        
-        private IEnumerator SpawnRoutine(LevelData level)
-        {
-            for (int i = 0; i < level.waves.Length; i++)
-            {
-                wave = level.waves[i];
-                Debug.Log("Wave " + wave);
+            enemiesSpawned = 0;
+            enemiesAlive = 0;
 
-                enemiesSpawned = 0;
-                enemiesAlive = 0;
-
-                NotifyEnemyCountChanged();
-
-                while (enemiesSpawned < wave.totalEnemies)
-                {
-                    SpawnBatch();
-                    yield return new WaitForSeconds(wave.spawnInterval);
-                }
-
-                waitingForWaveEnd = true;
-
-                while (waitingForWaveEnd)
-                {
-                    if (enemiesAlive <= 0)
-                    {
-                        waitingForWaveEnd = false;
-                        break;
-                    }
-
-                    yield return null;
-                }
-
-                bool isLastWave = (i + 1 == level.waves.Length);
-                Debug.Log("Is last wave:" +isLastWave);
-
-                if (!isLastWave)
-                {
-                    if (wave.delayAfterWave > 0)
-                    {
-                        yield return StartCoroutine(RunWaveDelay(wave.delayAfterWave));
-                    }
-                }
-                else
-                {
-                    Debug.Log("Level Complete!");
-                    OnWaveCompleted?.Invoke();
-                }
-            }
-        }
-
-        private void SpawnBatch()
-        {
-            int remaining = wave.totalEnemies - enemiesSpawned;
-            int spawnCount = Mathf.Min(wave.batchSize, remaining);
-
-            for (int i = 0; i < spawnCount; i++)
-            {
-                SpawnEnemy();
-            }
-        }
-
-        private void SpawnEnemy()
-        {
-            Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        
-            Vector3 offset = Random.insideUnitSphere * 3f;
-            offset.y = 0;
-
-            Vector3 spawnPos = spawnPoint.position + offset;
-        
-            EnemyBase prefab =
-                wave.enemyPrefabs[Random.Range(0, wave.enemyPrefabs.Length)];
-
-            EnemyBase enemy = Instantiate(
-                prefab,
-                spawnPos,
-                Quaternion.identity
-            );
-
-            enemy.Initialize(playerTarget);
-
-            enemiesSpawned++;
-            enemiesAlive++;
-            NotifyEnemyCountChanged();
-        }
-        private void HandleEnemyKilled(EnemyBase enemy)
-        {
-            enemiesAlive = Mathf.Max(0, enemiesAlive - 1);
             NotifyEnemyCountChanged();
 
-            if (enemiesAlive == 0 && waitingForWaveEnd)
+            while (enemiesSpawned < wave.totalEnemies)
             {
-                waitingForWaveEnd = false;
+                SpawnBatch();
+                yield return new WaitForSeconds(wave.spawnInterval);
             }
-        }
-        
-        private IEnumerator RunWaveDelay(float delay)
-        {
-            int secondsLeft = Mathf.RoundToInt(delay);
 
-            OnWaveDelayStarted?.Invoke(secondsLeft);
-            OnWaveDelayUpdated?.Invoke(secondsLeft);
+            waitingForWaveEnd = true;
 
-            while (secondsLeft > 0)
+            while (waitingForWaveEnd)
             {
-                yield return new WaitForSeconds(1f);
-                secondsLeft--;
-                OnWaveDelayUpdated?.Invoke(secondsLeft);
+                if (enemiesAlive <= 0)
+                {
+                    waitingForWaveEnd = false;
+                    break;
+                }
+
+                yield return null;
             }
-        }
-        
-        private void NotifyEnemyCountChanged()
-        {
-            OnEnemyCountChanged?.Invoke(enemiesAlive, enemiesSpawned, wave.totalEnemies);
-        }
-        private void HandleLevelComplete()
-        {
-            int levelIndex = LevelManager.Instance.CurrentLevelIndex;
 
-            SaveSystem.UnlockNextLevel(levelIndex);
+            bool isLastWave = (i + 1 == level.waves.Length);
+            Debug.Log("Is last wave:" + isLastWave);
 
-            levelCompleteUI.SetActive(true);
-            
-            Time.timeScale = 0f;
+            if (!isLastWave)
+            {
+                if (wave.delayAfterWave > 0)
+                {
+                    yield return StartCoroutine(RunWaveDelay(wave.delayAfterWave));
+                }
+            }
+            else
+            {
+                Debug.Log("Level Complete!");
+                OnWaveCompleted?.Invoke();
+            }
         }
     }
+
+    private void SpawnBatch()
+    {
+        int remaining = wave.totalEnemies - enemiesSpawned;
+        int spawnCount = Mathf.Min(wave.batchSize, remaining);
+
+        for (int i = 0; i < spawnCount; i++)
+        {
+            SpawnEnemy();
+        }
+    }
+
+    private void SpawnEnemy()
+    {
+        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+
+        Vector3 offset = Random.insideUnitSphere * 3f;
+        offset.y = 0;
+
+        Vector3 spawnPos = spawnPoint.position + offset;
+
+        EnemyBase prefab =
+            wave.enemyPrefabs[Random.Range(0, wave.enemyPrefabs.Length)];
+
+        EnemyBase enemy = Instantiate(
+            prefab,
+            spawnPos,
+            Quaternion.identity
+        );
+
+        enemy.Initialize(playerTarget);
+
+        enemiesSpawned++;
+        enemiesAlive++;
+        NotifyEnemyCountChanged();
+    }
+
+    private void HandleEnemyKilled(EnemyBase enemy)
+    {
+        enemiesAlive = Mathf.Max(0, enemiesAlive - 1);
+        NotifyEnemyCountChanged();
+
+        if (enemiesAlive == 0 && waitingForWaveEnd)
+        {
+            waitingForWaveEnd = false;
+        }
+    }
+
+    private IEnumerator RunWaveDelay(float delay)
+    {
+        int secondsLeft = Mathf.RoundToInt(delay);
+
+        OnWaveDelayStarted?.Invoke(secondsLeft);
+        OnWaveDelayUpdated?.Invoke(secondsLeft);
+
+        while (secondsLeft > 0)
+        {
+            yield return new WaitForSeconds(1f);
+            secondsLeft--;
+            OnWaveDelayUpdated?.Invoke(secondsLeft);
+        }
+    }
+
+    private void NotifyEnemyCountChanged()
+    {
+        OnEnemyCountChanged?.Invoke(enemiesAlive, enemiesSpawned, wave.totalEnemies);
+    }
+
+    private void HandleLevelComplete()
+    {
+        int levelIndex = LevelManager.Instance.CurrentLevelIndex;
+
+        SaveSystem.UnlockNextLevel(levelIndex);
+
+        levelCompleteUI.SetActive(true);
+
+        Time.timeScale = 0f;
+    }
+}

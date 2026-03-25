@@ -47,6 +47,8 @@ public class EnemyBase : MonoBehaviour
         {
             Debug.LogError($"{name}: AttackBehaviour does not implement IEnemyAttack");
         }
+        
+        spellCaster.Initialize(data);
     }
 
     private void OnEnable()

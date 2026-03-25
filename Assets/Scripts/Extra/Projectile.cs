@@ -22,7 +22,7 @@ namespace Extra
             _combo = combo;
             _target = target;
             _speed = combo.speed;
-            _damage = combo.powerMultiplier;
+            _damage = combo.damage;
         
             if (_target)
             {
