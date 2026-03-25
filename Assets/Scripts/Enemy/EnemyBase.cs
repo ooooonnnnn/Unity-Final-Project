@@ -1,11 +1,14 @@
+using System;
 using Enemy;
 using Interface;
 using Player;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
-public class EnemyBase : MonoBehaviour
+public class EnemyBase : MonoBehaviour, IDamageable
 {
+    [Header("Components")]
     [SerializeField] private EnemyData data;
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Animator animator;
@@ -13,6 +16,10 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] private MonoBehaviour attackBehaviour;
     [SerializeField] private SpellCaster spellCaster;
 
+    [Header("Health")] 
+    [SerializeField, Tooltip("Set to <= 0 for unlimited health")] private float maxHealth;
+    private float currentHealth;
+    
     private IEnemyAttack attack;
 
     private static readonly int IsMovingHash = Animator.StringToHash("IsMoving");
@@ -30,6 +37,11 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] private float rangedBuffer = 0.75f;
 
     public static event System.Action<EnemyBase> OnEnemyKilled;
+
+    private void Awake()
+    {
+        currentHealth = maxHealth;
+    }
 
     private void Start()
     {
@@ -210,5 +222,12 @@ public class EnemyBase : MonoBehaviour
     {
         OnEnemyKilled?.Invoke(this);
         gameObject.SetActive(false);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        var previousHealth = currentHealth;
+        currentHealth -= damage;
+        if (currentHealth <= 0 && previousHealth > 0) Die();
     }
 }

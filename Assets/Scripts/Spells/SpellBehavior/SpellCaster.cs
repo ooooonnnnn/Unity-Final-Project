@@ -87,6 +87,7 @@ public class SpellCaster : MonoBehaviour
 
             case SpellDeliveryCategory.AOE:
             {
+                
                 var proj = Instantiate(areaOfEffectPrefab, transform.position, Quaternion.identity);
 
                 var behavior = proj.GetComponent<AreaOfEffectBehavior>();

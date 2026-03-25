@@ -1,3 +1,4 @@
+using Interface;
 using UnityEngine;
 
 public class AreaOfEffectBehavior : SpellBase
@@ -8,8 +9,8 @@ public class AreaOfEffectBehavior : SpellBase
 
         foreach (var target in targets)
         {
-            target.TryGetComponent<ITakeSpellData>(out var taker);
-            taker?.TakeSpellData(spellCombo);
+            target.TryGetComponent<IDamageable>(out var taker);
+            taker?.TakeDamage(spellCombo.damage);
         }
     }
     
