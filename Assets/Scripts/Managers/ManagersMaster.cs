@@ -3,9 +3,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Whisper.Utils;
 
-public class ManagersMaster : MonoBehaviour
+public class ManagersMaster : PersistentSingleton
 {
-    public static ManagersMaster Instance;
+    public new static ManagersMaster Instance => _instance;
+    private static ManagersMaster _instance;
     [SerializeField, HideInInspector] private MagicManager magicManager;
     [SerializeField, HideInInspector] private VoiceInputPipeline voiceInputPipeline;
     [SerializeField, HideInInspector] private MicrophoneRecord recorder;
@@ -25,11 +26,11 @@ public class ManagersMaster : MonoBehaviour
         voiceInputPipeline.SetInferenceLabels(magicManager.GetInferenceLabels());
     }
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (!Instance) Instance = this;
-        else Destroy(gameObject);
+        base.Awake();
         
-        DontDestroyOnLoad(gameObject);
+        print($"Awake called on ManagersMaster on {gameObject.name}");
+        _instance = this;
     }
 }

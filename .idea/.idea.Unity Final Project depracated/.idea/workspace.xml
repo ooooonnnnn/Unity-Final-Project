@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a596cb66-4fb7-4984-9213-90167ceb81fe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Final Project depracated/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Final Project depracated/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ML Models/Inference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ML Models/Inference.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ML Models/VoiceInputPipeline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ML Models/VoiceInputPipeline.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Persistent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PersistentSingleton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Persistent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PersistentSingleton.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterComponents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ManagersMaster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/ManagersMaster.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PersistentSingleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PersistentSingleton.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

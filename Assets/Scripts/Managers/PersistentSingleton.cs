@@ -1,29 +1,34 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
+[Tooltip("A singleton that will be destroyed if an older one with the same name exists")]
 public class PersistentSingleton : MonoBehaviour
 {
-    [SerializeField, 
-     Tooltip("A newly loaded object with this component will destroy itself if another one with the same id exists")] 
-    private int id;
-    
-    private static Dictionary<int, PersistentSingleton> instances = new Dictionary<int, PersistentSingleton>();
+    private static Dictionary<string, PersistentSingleton> singletonInstances = new();
+    public static PersistentSingleton Instance => _thisInstance;
+    protected static PersistentSingleton _thisInstance;
 
-    private void Awake()
+    protected virtual void Awake()
     {
-        if (!instances.ContainsKey(id))
+        print($"Awake called on PersistentSingleton on {gameObject.name}");
+        
+        var gameObjectName = gameObject.name;
+        
+        if (!singletonInstances.ContainsKey(gameObjectName))
         {
-            instances.Add(id, this);
+            singletonInstances.Add(gameObjectName, this);
             DontDestroyOnLoad(gameObject);
+            _thisInstance = this;
             return;
         }
         
-        if (instances[id] != this) Destroy(gameObject);
+        if (singletonInstances[gameObjectName] != this) Destroy(gameObject);
     }
 
     private void OnDestroy()
     {
-        if (instances[id] == this) instances.Remove(id);
+        if (singletonInstances[gameObject.name] == this) singletonInstances.Remove(gameObject.name);
     }
 }
