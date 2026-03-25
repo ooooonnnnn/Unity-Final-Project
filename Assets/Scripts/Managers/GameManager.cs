@@ -1,5 +1,6 @@
 using Player;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Managers
 {
@@ -52,13 +53,13 @@ namespace Managers
 
         private void PlayerWon()
         {
-          //  SceneManager.LoadScene("LevelSelect");
+            SceneManager.LoadScene("LevelSelect");
         }
 
 
         private void PlayerLost()
         {
-          // SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }

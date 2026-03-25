@@ -69,13 +69,12 @@ namespace Player
         public void TakeDamage(float damage)
         {
             health -= damage;
+            OnHealthChanged?.Invoke(health);
+
             if (health <= 0)
             {
                 OnPlayerDied?.Invoke();
-                return;
             }
-
-            OnHealthChanged?.Invoke(health);
         }
         
         public void MoveCharacter(InputAction.CallbackContext ctx)

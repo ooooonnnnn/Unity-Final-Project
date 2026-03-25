@@ -110,8 +110,8 @@ public class Inference : MonoBehaviour
 
     private void OnDestroy()
     {
-        worker.Dispose();
-        inputIdsTensor.Dispose();
-        attentionMaskTensor.Dispose();
+        worker?.Dispose();
+        inputIdsTensor?.Dispose();
+        attentionMaskTensor?.Dispose();
     }
 }
