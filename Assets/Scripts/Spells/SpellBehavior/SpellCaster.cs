@@ -27,7 +27,6 @@ public class SpellCaster : MonoBehaviour
     // private StrikeBehavior strikeBehavior;
     //TODO: Remove this debug action
     [SerializeField] private InputActionReference debugAction;
-    private Action<InputAction.CallbackContext> callbackCastSpell;
 
     
     public void Initialize(EnemyData data)
@@ -40,13 +39,26 @@ public class SpellCaster : MonoBehaviour
         _target = CharacterComponents.Instance.transform;
         
         //TODO: Remove this debug action
-        callbackCastSpell = ctx => CastSpell();
-        debugAction.action.performed += callbackCastSpell;
+        if (debugAction)
+        {
+            //debugAction.action.performed += DebugCastSpell;
+            ManagersMaster.Instance.PlayerInput.actions[debugAction.name].performed += DebugCastSpell;
+        }
     }
 
     private void OnDestroy()
     {
-        debugAction.action.performed -= callbackCastSpell;
+        if (debugAction && ManagersMaster.Instance)
+        {
+            //debugAction.action.performed -= DebugCastSpell;
+            ManagersMaster.Instance.PlayerInput.actions[debugAction.name].performed -= DebugCastSpell;
+        }
+    }
+    
+    private void DebugCastSpell(InputAction.CallbackContext ctx)
+    {
+        print("Casting Spell");
+        CastSpell();
     }
 
     public void SetTarget(Transform target)

@@ -36,7 +36,7 @@ public class ProjectileBehavior : SpellBase
 
         damageable?.TakeDamage(damage);
 
-        Debug.Log("I AM ENEMY I HIT PLAYER" + other.gameObject.name);
+        // Debug.Log("I AM ENEMY I HIT PLAYER" + other.gameObject.name);
         Destroy(gameObject);
     }
 }

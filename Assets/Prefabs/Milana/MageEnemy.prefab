@@ -201,6 +201,7 @@ MonoBehaviour:
   visual: {fileID: 7109865536421788625}
   attackBehaviour: {fileID: 1115259387944955723}
   spellCaster: {fileID: 5976946904217862361}
+  maxHealth: 1
   rotationSpeed: 120
   pathUpdateInterval: 0.15
   destinationThreshold: 0.25
@@ -269,6 +270,7 @@ MonoBehaviour:
   OnSpellCastFailed:
     m_PersistentCalls:
       m_Calls: []
+  debugAction: {fileID: 0}
 --- !u!1001 &7287361258545421370
 PrefabInstance:
   m_ObjectHideFlags: 0

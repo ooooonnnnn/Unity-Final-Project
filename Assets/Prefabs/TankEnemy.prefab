@@ -181,6 +181,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7505109443130675836}
     - target: {fileID: 8520818316116910619, guid: 23d91e9b654e09945a8960af9df0405c, type: 3}
+      propertyPath: maxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520818316116910619, guid: 23d91e9b654e09945a8960af9df0405c, type: 3}
       propertyPath: spellCaster
       value: 
       objectReference: {fileID: 6199414724364730964}
@@ -220,7 +224,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackMelee
   attackRate: 1
   attackRange: 1.5
-  data: {fileID: 11400000, guid: 4a6f2d3a7d973654d90c6b1e4d154e1a, type: 2}
   animator: {fileID: 7505109443130675836}
   spellCaster: {fileID: 6199414724364730964}
   combo: {fileID: 11400000, guid: 60ada02ef900e6b489c4dcff3a6e5da7, type: 2}

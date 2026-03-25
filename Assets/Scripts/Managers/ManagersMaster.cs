@@ -21,7 +21,7 @@ public class ManagersMaster : MonoBehaviour
         magicManager = GetComponentInChildren<MagicManager>();
         voiceInputPipeline = GetComponentInChildren<VoiceInputPipeline>();
         recorder = GetComponentInChildren<MicrophoneRecord>();
-        
+        playerInput = GetComponentInChildren<PlayerInput>();
         voiceInputPipeline.SetInferenceLabels(magicManager.GetInferenceLabels());
     }
 
