@@ -62,6 +62,7 @@ namespace Whisper
                  "It should improve transcription quality or guide it to the right direction.")]
         [TextArea]
         public string initialPrompt;
+        [SerializeField] private bool useInitialPrompt;
 
         [Header("Streaming settings")] 
         [Tooltip("Minimal portions of audio that will be processed by whisper stream in seconds.")]
@@ -305,7 +306,7 @@ namespace Whisper
             _params.AudioCtx = audioCtx;
             _params.EnableTokens = enableTokens;
             _params.TokenTimestamps = tokensTimestamps;
-            _params.InitialPrompt = initialPrompt;
+            _params.InitialPrompt = useInitialPrompt ? initialPrompt : "";
         }
         
         private WhisperContextParams CreateContextParams()

@@ -3,6 +3,7 @@ using Managers;
 using Player;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class SpellCaster : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class SpellCaster : MonoBehaviour
     // private ProjectileBehavior projectileBehavior;
     // private AreaOfEffectBehavior areaOfEffectCombo;
     // private StrikeBehavior strikeBehavior;
+    //TODO: Remove this debug action
+    [SerializeField] private InputActionReference debugAction;
+    private Action<InputAction.CallbackContext> callbackCastSpell;
 
     
     public void Initialize(EnemyData data)
@@ -34,6 +38,15 @@ public class SpellCaster : MonoBehaviour
     private void Start()
     {
         _target = CharacterComponents.Instance.transform;
+        
+        //TODO: Remove this debug action
+        callbackCastSpell = ctx => CastSpell();
+        debugAction.action.performed += callbackCastSpell;
+    }
+
+    private void OnDestroy()
+    {
+        debugAction.action.performed -= callbackCastSpell;
     }
 
     public void SetTarget(Transform target)
