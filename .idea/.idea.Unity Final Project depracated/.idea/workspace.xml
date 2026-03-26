@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a596cb66-4fb7-4984-9213-90167ceb81fe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Final Project depracated/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Final Project depracated/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ManagersMaster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/ManagersMaster.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PersistentSingleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PersistentSingleton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SpellPrefabs/ParticlePrefabs/AoeDarkParticle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SpellPrefabs/ParticlePrefabs/AoeDarkParticle.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +52,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "Unity Attach To.Attach to.executor": "Debug",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "player-can-die",
+    "git-widget-placeholder": "fix-aoe-vxf",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -125,6 +123,7 @@
       <workItem from="1774450672703" duration="6998000" />
       <workItem from="1774463135362" duration="517000" />
       <workItem from="1774466288784" duration="1754000" />
+      <workItem from="1774519059338" duration="645000" />
     </task>
     <servers />
   </component>

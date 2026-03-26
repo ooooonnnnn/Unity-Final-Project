@@ -56,7 +56,15 @@ public class SpellBase : MonoBehaviour
 
     protected virtual void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Spell")) return; // Ignore collisions with other spells
+        SelfDestructOnHit(other);
+    }
+
+    private void SelfDestructOnHit(Collision other)
+    {
+        //AOE doesn't self destruct on hit
+        if (spellCombo.spellType.deliveryCategory == SpellDeliveryCategory.AOE) return;
+        
+        if (other.gameObject.CompareTag("Spell")) return;
         if (ignorePlayer && other.gameObject.CompareTag("Player")) return;
         if (ignoreEnemies && other.gameObject.CompareTag("Enemy")) return;
         other.gameObject.TryGetComponent<ITakeSpellData>(out var component);
