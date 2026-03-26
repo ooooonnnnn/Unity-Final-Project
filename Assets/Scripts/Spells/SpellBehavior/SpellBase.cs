@@ -76,7 +76,7 @@ public class SpellBase : MonoBehaviour
 
     protected void SelfDestruct()
     {
-        print("Self Destruct");
+        // print("Self Destruct");
         ActiveParticlePrefab.transform.parent = null;
         ActiveParticlePrefab.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         Destroy(gameObject);

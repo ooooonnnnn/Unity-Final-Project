@@ -96,7 +96,7 @@ public class SpellCaster : MonoBehaviour
                     
                     behavior.SetDamage(enemyData ? enemyData.projectileDamage : combo.damage);
                     
-                    print($"Created projectile with damage {behavior.GetDamage()}");
+                    // print($"Created projectile with damage {behavior.GetDamage()}");
                 }
 
                 break;

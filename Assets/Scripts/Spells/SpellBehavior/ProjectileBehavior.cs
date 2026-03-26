@@ -41,7 +41,7 @@ public class ProjectileBehavior : SpellBase
             if (damageable != null)
             {
                 damageable?.TakeDamage(damage);
-                print("Self Destructing because player hit");
+                // print("Self Destructing because player hit");
                 SelfDestruct();
                 return;
             }

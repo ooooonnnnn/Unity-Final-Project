@@ -3,6 +3,7 @@ using System.Collections;
 using Level;
 using Player;
 using Save;
+using UnityEditor.U2D.Sprites;
 using UnityEngine;
 using Wave;
 using Random = UnityEngine.Random;
@@ -40,6 +41,9 @@ public class EnemySpawner : MonoBehaviour
         OnWaveCompleted += HandleLevelComplete;
 
         StartCoroutine(SpawnRoutine(waves));
+        
+        //TODO: Delete this
+        //levelCompleteUI.SetActive(true);
     }
 
     private IEnumerator SpawnRoutine(LevelData level)
@@ -47,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < level.waves.Length; i++)
         {
             wave = level.waves[i];
-            Debug.Log("Wave " + wave);
+            // Debug.Log("Wave " + wave);
 
             enemiesSpawned = 0;
             enemiesAlive = 0;
