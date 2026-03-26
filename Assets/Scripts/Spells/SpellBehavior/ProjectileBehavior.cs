@@ -11,17 +11,18 @@ public class ProjectileBehavior : SpellBase
     private void Update()
     {
         transform.position += transform.forward * (projectileSpeed * Time.deltaTime);
+        // print(transform.position);
     }
     public void SetTarget(Transform target)
     {
         this.target = target;
 
         if (target)
-        { Vector3 vector3 = new Vector3(target.localPosition.x, target.localPosition.y + 1, target.localPosition.z);
+        { 
+            Vector3 vector3 = new Vector3(target.localPosition.x, target.localPosition.y + 1, target.localPosition.z);
             
             Vector3 dir = (vector3 - transform.position).normalized;
             transform.forward = dir;
-            
         }
     }
     

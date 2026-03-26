@@ -30,7 +30,7 @@ public class ManagersMaster : PersistentSingleton
     {
         base.Awake();
         
-        print($"Awake called on ManagersMaster on {gameObject.name}");
+        // print($"Awake called on ManagersMaster on {gameObject.name}");
         _instance = this;
     }
 }

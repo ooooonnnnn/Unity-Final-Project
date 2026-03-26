@@ -1,4 +1,3 @@
-using System.Linq;
 using Interface;
 using Player;
 using UnityEngine;
@@ -28,5 +27,4 @@ public class AreaOfEffectBehavior : SpellBase
             }
         }
     }
-    
 }

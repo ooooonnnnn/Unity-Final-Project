@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a596cb66-4fb7-4984-9213-90167ceb81fe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SpellPrefabs/ParticlePrefabs/AoeDarkParticle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SpellPrefabs/ParticlePrefabs/AoeDarkParticle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Final Project depracated/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Final Project depracated/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Enchanted Land SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Enchanted Land SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ManagersMaster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/ManagersMaster.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PersistentSingleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PersistentSingleton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spells/SpellBehavior/AreaOfEffectBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spells/SpellBehavior/AreaOfEffectBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spells/SpellBehavior/ProjectileBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spells/SpellBehavior/ProjectileBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spells/SpellBehavior/SpellBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spells/SpellBehavior/SpellBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spells/SpellBehavior/SpellCaster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spells/SpellBehavior/SpellCaster.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,12 +36,14 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/31f3cd5c2a074982a9d5664e7709cac1212400/33/8a91a79f/SetupCoroutine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/31f3cd5c2a074982a9d5664e7709cac1212400/91/7f5873f4/UnityEvent`3.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/31f3cd5c2a074982a9d5664e7709cac1212400/e3/d3eea4d8/Object.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5016c3a47c2a4a0cbfa8e12eb592279ba6a600/7b/29a8e108/Utility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@57d0e36f6123/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -123,13 +134,14 @@
       <workItem from="1774450672703" duration="6998000" />
       <workItem from="1774463135362" duration="517000" />
       <workItem from="1774466288784" duration="1754000" />
-      <workItem from="1774519059338" duration="645000" />
+      <workItem from="1774519059338" duration="5997000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />
@@ -155,31 +167,57 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Spells/SpellBehavior/SpellCaster.cs</url>
-          <line>58</line>
-          <properties documentPath="C:\Users\omrit\Documents\GitHub\Unity Final Project depracated\Assets\Scripts\Spells\SpellBehavior\SpellCaster.cs" containingFunctionPresentation="Method 'DebugCastSpell'">
-            <startOffsets>
-              <option value="1778" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1779" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Spells/SpellBehavior/SpellCaster.cs</url>
-          <line>100</line>
+          <line>104</line>
           <properties documentPath="C:\Users\omrit\Documents\GitHub\Unity Final Project depracated\Assets\Scripts\Spells\SpellBehavior\SpellCaster.cs" containingFunctionPresentation="Method 'CastSpellFromCombo'">
             <startOffsets>
-              <option value="2881" />
+              <option value="3077" />
             </startOffsets>
             <endOffsets>
-              <option value="2882" />
+              <option value="3078" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Spells/SpellBehavior/SpellCaster.cs</url>
+          <line>84</line>
+          <properties documentPath="C:\Users\omrit\Documents\GitHub\Unity Final Project depracated\Assets\Scripts\Spells\SpellBehavior\SpellCaster.cs" containingFunctionPresentation="Method 'CastSpellFromCombo'">
+            <startOffsets>
+              <option value="2330" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2416" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Spells/SpellBehavior/SpellCaster.cs</url>
+          <line>53</line>
+          <properties documentPath="C:\Users\omrit\Documents\GitHub\Unity Final Project depracated\Assets\Scripts\Spells\SpellBehavior\SpellCaster.cs" containingFunctionPresentation="Method 'OnDestroy'">
+            <startOffsets>
+              <option value="1550" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1593" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Spells/SpellBehavior/SpellCaster.cs</url>
+          <line>44</line>
+          <properties documentPath="C:\Users\omrit\Documents\GitHub\Unity Final Project depracated\Assets\Scripts\Spells\SpellBehavior\SpellCaster.cs" containingFunctionPresentation="Method 'Start'">
+            <startOffsets>
+              <option value="1297" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1313" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

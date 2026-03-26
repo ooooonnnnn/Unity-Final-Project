@@ -4,6 +4,7 @@ using Player;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class SpellCaster : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class SpellCaster : MonoBehaviour
     
     [SerializeField] private bool ignorePlayer = false;
     [SerializeField] private bool ignoreEnemies = false;
+
+    [SerializeField] private Transform projectileOrigin;
     
     public UnityEvent OnSpellCast;
     public UnityEvent OnSpellCastFailed;
@@ -41,8 +44,8 @@ public class SpellCaster : MonoBehaviour
         //TODO: Remove this debug action
         if (debugAction)
         {
-            //debugAction.action.performed += DebugCastSpell;
-            ManagersMaster.Instance.PlayerInput.actions[debugAction.name].performed += DebugCastSpell;
+            debugAction.action.performed += DebugCastSpell;
+            // ManagersMaster.Instance.PlayerInput.actions[debugAction.name].performed += DebugCastSpell;
         }
     }
 
@@ -50,8 +53,8 @@ public class SpellCaster : MonoBehaviour
     {
         if (debugAction && ManagersMaster.Instance)
         {
-            //debugAction.action.performed -= DebugCastSpell;
-            ManagersMaster.Instance.PlayerInput.actions[debugAction.name].performed -= DebugCastSpell;
+            debugAction.action.performed -= DebugCastSpell;
+            // ManagersMaster.Instance.PlayerInput.actions[debugAction.name].performed -= DebugCastSpell;
         }
     }
     
@@ -79,7 +82,9 @@ public class SpellCaster : MonoBehaviour
         {
             case SpellDeliveryCategory.Projectile:
             {
-                GameObject proj = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                var spawnPosition = projectileOrigin ? projectileOrigin.position : transform.position;
+                
+                GameObject proj = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
 
                 var behavior = proj.GetComponent<ProjectileBehavior>();
 
@@ -91,7 +96,6 @@ public class SpellCaster : MonoBehaviour
                     
                     behavior.SetTarget(_target);
                     behavior.SetDamage(enemyData.projectileDamage);
-
                 }
 
                 break;
@@ -117,7 +121,9 @@ public class SpellCaster : MonoBehaviour
 
             case SpellDeliveryCategory.Strike:
             {
-                GameObject strike = Instantiate(strikePrefab, transform.position, Quaternion.identity);
+                var spawnPosition = projectileOrigin ? projectileOrigin.position : transform.position;
+                
+                GameObject strike = Instantiate(strikePrefab, spawnPosition, Quaternion.identity);
 
                 var behavior = strike.GetComponent<StrikeBehavior>();
 

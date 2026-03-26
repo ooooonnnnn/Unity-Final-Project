@@ -12,7 +12,7 @@ public class PersistentSingleton : MonoBehaviour
 
     protected virtual void Awake()
     {
-        print($"Awake called on PersistentSingleton on {gameObject.name}");
+        // print($"Awake called on PersistentSingleton on {gameObject.name}");
         
         var gameObjectName = gameObject.name;
         
