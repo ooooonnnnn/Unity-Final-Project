@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a596cb66-4fb7-4984-9213-90167ceb81fe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Final Project depracated/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Final Project depracated/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyManager.cs" afterDir="false" />
-    </list>
+    <list default="true" id="a596cb66-4fb7-4984-9213-90167ceb81fe" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,7 +126,7 @@
       <workItem from="1774519059338" duration="5997000" />
       <workItem from="1774538989888" duration="3361000" />
       <workItem from="1774542511964" duration="7044000" />
-      <workItem from="1774563114814" duration="1987000" />
+      <workItem from="1774563114814" duration="2653000" />
     </task>
     <servers />
   </component>
@@ -163,7 +159,7 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+        <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Spells/SpellBehavior/SpellCaster.cs</url>
           <line>105</line>
           <properties documentPath="C:\Users\omrit\Documents\GitHub\Unity Final Project depracated\Assets\Scripts\Spells\SpellBehavior\SpellCaster.cs" containingFunctionPresentation="Method 'CastSpellFromCombo'">
