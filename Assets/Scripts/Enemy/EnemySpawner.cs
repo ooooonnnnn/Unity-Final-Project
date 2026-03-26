@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private LevelData waves;
     [SerializeField] private Transform[] spawnPoints;
-    [SerializeField] private Transform playerTarget;
+    private Transform playerTarget;
     [SerializeField] private GameObject levelCompleteUI;
 
     private int enemiesSpawned;
@@ -37,6 +37,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         playerTarget = CharacterComponents.Instance.transform;
+        print(playerTarget.position);
         EnemyBase.OnEnemyKilled += HandleEnemyKilled;
         OnWaveCompleted += HandleLevelComplete;
 

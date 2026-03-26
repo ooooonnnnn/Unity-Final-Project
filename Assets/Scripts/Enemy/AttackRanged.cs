@@ -1,5 +1,6 @@
 
 using Interface;
+using Player;
 using UnityEngine;
 
 namespace Enemy
@@ -53,7 +54,8 @@ namespace Enemy
 
             if (spellCaster)
             {
-                spellCaster.targetPosition = _target.position + Vector3.up * verticalOffsetWhenTargetingPlayer;
+                var playerPos = CharacterComponents.Instance.transform.position;
+                spellCaster.targetPosition = playerPos + Vector3.up * verticalOffsetWhenTargetingPlayer;
                 spellCaster.CastSpell();
             }
         }

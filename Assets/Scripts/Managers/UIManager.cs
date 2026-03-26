@@ -12,13 +12,13 @@ namespace Managers
 
         void Awake()
         {
-            if (Instance && Instance != this)
-            {
-                Destroy(gameObject);
-                return;
-            }
+            // if (Instance && Instance != this)
+            // {
+            //     Destroy(gameObject);
+            //     return;
+            // }
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            // DontDestroyOnLoad(gameObject);
         }
 
         public void UpdatePlayerHealth(float health)
