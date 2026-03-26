@@ -80,7 +80,7 @@ public class EnemyBase : MonoBehaviour, IDamageable
         attack?.Initialize(transform, target);
         if (spellCaster)
         {
-            spellCaster.SetTarget(playerTarget);
+            // spellCaster.SetTarget(playerTarget);
         }
     }
 

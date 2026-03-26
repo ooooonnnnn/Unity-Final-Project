@@ -22,7 +22,7 @@ public class SpellCaster : MonoBehaviour
     public UnityEvent OnSpellCast;
     public UnityEvent OnSpellCastFailed;
 
-    private Transform _target; 
+    public Vector3 targetPosition; 
     private EnemyData enemyData;
 
     // private ProjectileBehavior projectileBehavior;
@@ -39,8 +39,6 @@ public class SpellCaster : MonoBehaviour
     
     private void Start()
     {
-        _target = CharacterComponents.Instance.transform;
-        
         //TODO: Remove this debug action
         if (debugAction)
         {
@@ -64,10 +62,10 @@ public class SpellCaster : MonoBehaviour
         CastSpell();
     }
 
-    public void SetTarget(Transform target)
-    {
-        _target = target;
-    }
+    // public void SetTarget(Transform target)
+    // {
+    //     _target = target;
+    // }
 
     public void CastSpell()
     {
@@ -94,8 +92,11 @@ public class SpellCaster : MonoBehaviour
                     behavior.ignorePlayer = ignorePlayer;
                     behavior.ignoreEnemies = ignoreEnemies;
                     
-                    behavior.SetTarget(_target);
-                    behavior.SetDamage(enemyData.projectileDamage);
+                    behavior.SetTarget(targetPosition);
+                    
+                    behavior.SetDamage(enemyData ? enemyData.projectileDamage : combo.damage);
+                    
+                    print($"Created projectile with damage {behavior.GetDamage()}");
                 }
 
                 break;

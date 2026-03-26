@@ -29,20 +29,20 @@ namespace Player
         [SerializeField] private Collider _PlayerCollider;
         
         [SerializeField] private SpellCaster spellCaster;
+        [SerializeField] private Transform spellCasterTarget;
 
 
         private float health;
+        private float verticalOffsetForProjectileTarget;
 
         private void Awake()
         {
             Instance = this;
-            
-
-            
         }
 
         private void Start()
         {
+            spellCasterTarget.parent = null;
             
             health = MAX_HEALTH;
             OnHealthChanged?.Invoke(health);
@@ -52,7 +52,7 @@ namespace Player
             
             ManagersMaster.Instance.VoiceInputPipeline.OnPipelineDone.AddListener(spellCaster.CastSpellFromParameters);
         }
-        
+
         private void OnDestroy()
         {
             ManagersMaster.Instance.VoiceInputPipeline.OnPipelineDone.RemoveListener(spellCaster.CastSpellFromParameters);
@@ -64,6 +64,14 @@ namespace Player
         {
             _navMeshAgent = GetComponent<NavMeshAgent>(); //editor time
             spellCaster = GetComponent<SpellCaster>();
+            // spellCaster.SetTarget(spellCasterTarget);
+        }
+
+        private void Update()
+        {
+            var raycastMousePos = RaycastMousePosition();
+            spellCasterTarget.position = raycastMousePos ?? Vector3.zero;
+            spellCaster.targetPosition = spellCasterTarget.position + Vector3.up * verticalOffsetForProjectileTarget;
         }
 
         public void TakeDamage(float damage)
@@ -80,18 +88,26 @@ namespace Player
         public void MoveCharacter(InputAction.CallbackContext ctx)
         {
             if (ctx.phase == InputActionPhase.Canceled) return;
-            Ray ray = UnityEngine.Camera.main.ScreenPointToRay(ctx.ReadValue<Vector2>());
-            Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 1f);
-            if (!Physics.Raycast(ray, out RaycastHit colliderHit, 10000, LayerMask.GetMask(GroundLayerName)))
-            {
-                return;
-            }
-
-            // print(colliderHit.point);
+            var targetPosition = RaycastMousePosition();
+            if (targetPosition == null) return;
             
             if (!navMeshAgent.enabled)
                 return;
-            navMeshAgent.SetDestination(colliderHit.point);
+            navMeshAgent.SetDestination(targetPosition.Value);
+        }
+
+        private Vector3? RaycastMousePosition()
+        {
+            var mousePosition = Mouse.current.position.ReadValue(); 
+            
+            Ray ray = Camera.main.ScreenPointToRay(mousePosition);
+            Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 1f);
+            if (Physics.Raycast(ray, out RaycastHit colliderHit, 10000, LayerMask.GetMask(GroundLayerName)))
+            {
+                return colliderHit.point;
+            }
+
+            return null;
         }
     }
 }

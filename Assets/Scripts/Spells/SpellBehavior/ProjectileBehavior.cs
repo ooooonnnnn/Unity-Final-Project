@@ -1,5 +1,5 @@
-using System;
 using Interface;
+using Player;
 using UnityEngine;
 
 public class ProjectileBehavior : SpellBase
@@ -13,31 +13,56 @@ public class ProjectileBehavior : SpellBase
         transform.position += transform.forward * (projectileSpeed * Time.deltaTime);
         // print(transform.position);
     }
-    public void SetTarget(Transform target)
+    public void SetTarget(Vector3 target)
     {
-        this.target = target;
-
-        if (target)
-        { 
-            Vector3 vector3 = new Vector3(target.localPosition.x, target.localPosition.y + 1, target.localPosition.z);
-            
-            Vector3 dir = (vector3 - transform.position).normalized;
-            transform.forward = dir;
-        }
+        Vector3 dir = (target - transform.position).normalized;
+        transform.forward = dir;
     }
     
     public void SetDamage(float damage)
     {
         this.damage = damage;
     }
-    
+
+    public float GetDamage() => damage;
+
+    protected override void OnCollisionEnter(Collision other)
+    {
+        //Do nothing
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        var damageable = other.GetComponent<IDamageable>();
+        IDamageable damageable;
+        
+        if (!ignorePlayer)
+        {
+            damageable = other.GetComponent<CharacterComponents>();
+            if (damageable != null)
+            {
+                damageable?.TakeDamage(damage);
+                print("Self Destructing because player hit");
+                SelfDestruct();
+                return;
+            }
+        }
 
-        damageable?.TakeDamage(damage);
-
-        // Debug.Log("I AM ENEMY I HIT PLAYER" + other.gameObject.name);
-        Destroy(gameObject);
+        if (!ignoreEnemies)
+        {
+            damageable = other.GetComponent<EnemyBase>();
+            if (damageable != null)
+            {
+                damageable?.TakeDamage(damage);
+                print("Self Destructing because enemy hit");
+                SelfDestruct();
+                return;
+            }
+        }
+        
+        // damageable = other.GetComponent<IDamageable>();
+        // if (damageable == null) return;
+        // damageable?.TakeDamage(damage);
+        // print("Self Destructing because object hit");
+        // SelfDestruct();
     }
 }

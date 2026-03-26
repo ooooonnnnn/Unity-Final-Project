@@ -265,7 +265,7 @@ PrefabInstance:
     - target: {fileID: 2515694236727424986, guid: f006a251aa3075847907ef645f75bceb, type: 3}
       propertyPath: 'spellCombos.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: a1e453d54864e4340beafa85c58d217d, type: 2}
+      objectReference: {fileID: 11400000, guid: 60ada02ef900e6b489c4dcff3a6e5da7, type: 2}
     - target: {fileID: 3701007124455539662, guid: f006a251aa3075847907ef645f75bceb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.32

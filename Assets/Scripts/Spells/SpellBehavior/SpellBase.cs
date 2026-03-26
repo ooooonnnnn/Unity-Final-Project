@@ -56,6 +56,7 @@ public class SpellBase : MonoBehaviour
 
     protected virtual void OnCollisionEnter(Collision other)
     {
+        print("Attempting self destruct on hit");
         SelfDestructOnHit(other);
     }
 

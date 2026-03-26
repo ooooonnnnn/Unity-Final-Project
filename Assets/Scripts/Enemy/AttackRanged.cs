@@ -15,6 +15,7 @@ namespace Enemy
         private Transform _target;
         private Transform _owner;
         private float _fireTimer;
+        [SerializeField] private float verticalOffsetWhenTargetingPlayer;
 
         private static readonly int AttackHash = Animator.StringToHash("Attack");
 
@@ -52,6 +53,7 @@ namespace Enemy
 
             if (spellCaster)
             {
+                spellCaster.targetPosition = _target.position + Vector3.up * verticalOffsetWhenTargetingPlayer;
                 spellCaster.CastSpell();
             }
         }
