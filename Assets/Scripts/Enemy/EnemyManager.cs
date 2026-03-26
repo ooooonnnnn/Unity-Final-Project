@@ -27,6 +27,7 @@ using UnityEngine.InputSystem;
             {
                 enemies[i].Tick(dt);
             }
+            //TODO: remove this
             if (Keyboard.current.kKey.wasPressedThisFrame)
             {
                 KillAllEnemies();
